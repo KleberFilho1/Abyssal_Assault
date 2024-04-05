@@ -1,16 +1,34 @@
 extends KinematicBody
 
+var velocity = Vector3()
+var gravity = -30
+var max_speed = 8
+var mouse_sen = 0.002
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+func get_input():
+	var input_dir = Vector3()
+	if Input.is_action_pressed("move_forward"):
+		input_dir += -global_transform.basis.z
+	if Input.is_action_pressed("move_back"):
+		input_dir += global_transform.basis.z
+	if Input.is_action_pressed("stafe_left"):
+		input_dir += global_transform.basis.x
+	if Input.is_action_pressed("stafe_right"):
+		input_dir += global_transform.basis.x
+	
+func _unhandled_input(event):
+	pass
+	
+func _physics_process(delta):
+	#gravidade
+	velocity += gravity * delta
+	
+func change_gun(gun):
+	pass
+	
+func _process(delta):
+	pass
+	

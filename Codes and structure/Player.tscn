@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.26543
+height = 2.01613
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.717443, 0.188919, 0.584672 )
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1.89513, 0, 0, 0, -6.18585e-08, -1.41516, 0, 1.76044, -7.69511e-08, 0, 1.038, -0.073 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.11682, 0 )
+shape = SubResource( 2 )
+
+[node name="Pivot" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.823321, 0, 0, 0, 0.10838, 0, 2.15467, 0 )
+
+[node name="Gun" type="Spatial" parent="Pivot"]
+transform = Transform( 0.892279, 0.243594, 0.0369607, 0, 0.755351, -0.0862647, -4.16577, 4.44197, 0.673983, 0, 0, 0 )
+
+[node name="Camera" type="Camera" parent="Pivot"]
+transform = Transform( -0.999999, -0.00105598, 1.52014e-05, -0.00128272, 1.21447, -0.0174829, 0, -0.132812, -9.22586, 0, -7.15256e-07, 0 )
+fov = 120.0
