@@ -1,0 +1,19 @@
+
+torchbrn torchbrn
+blood/head headexp
+
+warr/active			warrSee
+warr/attack2		AXEHITL5
+warr/cheer			warrChe
+warr/pain			warrPain
+			
+$random warr/death { warrDead warrDead2 warrDead3}
+warrDead	warrDead 
+warrDead2	warrDe2
+warrDead3 	MUTE
+
+$random warr/sight { warrSee warrSee2 warrSee3}
+warrSee	warrSee 
+warrSee2	MUTE
+warrSee3	MUTE
+

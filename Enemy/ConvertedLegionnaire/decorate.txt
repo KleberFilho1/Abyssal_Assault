@@ -1,0 +1,320 @@
+ACTOR warrior
+{
+  Scale 0.9 
+  Health 50
+  GIBHEALTH 20
+  Radius 22
+  Height 52
+  Mass 75
+  Speed 14
+  PainChance 250
+  Monster
+  MELEERANGE 60
+  +FLOORCLIP  
+  SeeSound "warr/sight"
+  AttackSound ""
+  PainSound "warr/pain"
+  DeathSound "warr/death"
+  HitObituary "%o was slain by a Converted Legionnaire."
+  Obituary  "%o was slain by a Converted Legionnaire."
+  DropItem "SilverShield", 5
+  Tag "Converted Legionnaire"
+  States
+  {
+  Spawn:
+    WARR C 10 A_Look
+    Loop
+  See:
+    WARR ABCDEFGH 3 A_Chase
+    Loop
+	
+  Melee:
+	TNT1 A 0 a_JUMP (60, "Block")
+    WARR MLKJIL 3 A_FaceTarget
+    WARR M 4 A_CustomBulletAttack(0,0,1,random(3,8)*2,"Fleshpuff",90,CBAF_NORANDOM)
+    WARR N 6
+    Goto See
+	
+	MISSILE:
+		TNT1 A 0 a_JUMP (128, "Block")
+		TNT1 A 0 a_JUMPifhealthlower(40,"Cheer") 
+	goto see
+		
+	Cheer: 
+	TNT1 A 0 A_StartSound("warr/cheer") 
+	WARS ABCDEFGHABCDEFGHABCDEFGHABCDEFGH 2  A_AlertMonsters 
+	TNT1 A 0 A_ResetHealth 
+	GOTO SEE
+	
+  Pain:
+  TNT1 A 0 a_JUMP (64, "Block")
+    WARR RR 4 
+    WARR R 11 A_Pain
+    Goto See
+	
+ Block: 
+	TNT1 A 0 A_FaceTarget
+	WARR OPQ 2 A_SpawnItemEx("WarShieldDefense", 25,0,15,0,0,0,0,SXF_NOCHECKPOSITION,0)
+	WARR QQQQQQ 3  A_SpawnItemEx("WarShieldDefense", 25,0,15,0,0,0,0,SXF_NOCHECKPOSITION,0)
+	WARR QPO 3 A_SpawnItemEx("WarShieldDefense", 25,0,15,0,0,0,0,SXF_NOCHECKPOSITION,0)
+	GOTO SEE
+	
+  Death:
+	WARS S 0 a_JUMP (100, "Death.Headshot")
+	TNT1 A 0 A_Scream
+	WARS S 0 a_JUMP (50, 2)	
+	WARR S 0
+	
+    "####" S 7 A_Scream
+    "####" TUV 5 
+    "####" W 4 A_NoBlocking
+    "####" XY 4
+    "####" Z -1
+    Stop
+	
+	Ice:
+	TNT1 A 0 A_jump(256,"ice1","ice2","ice3")
+	
+		ice1:
+		WARS R 5 A_FreezeDeath
+		WARS R 1 A_FreezeDeathChunks
+		wait
+		stop
+		
+		ice2:
+		WARS [ 5 A_FreezeDeath
+		WARS [ 1 A_FreezeDeathChunks
+		wait
+		stop
+		
+		ice3:
+		WARS ] 5 A_FreezeDeath
+		WARS ] 1 A_FreezeDeathChunks	
+		wait
+		stop
+	
+Death.Headshot:
+	WARS i 7 A_PlaySound("blood/head")
+	TNT1 A 0 A_SpawnItemEx("MythWarriorHead",  	4,0,50,   		1,random(-7,7),random(2,7))
+	TNT1 A 0 A_SpawnItemEx("MythWarriorSWORD",  2,-10,30, 	  	1,4,random(2,7))
+	WARS JKL 7 
+	WARS M 7 A_NoBlocking
+	WARS N -1
+	Stop
+	
+xDEATH:
+	WARR R 4 A_PlaySound("blood/head")
+// x is +forward,-backward    y is right+, left -
+				TNT1 A 0 A_SpawnItemEx("MythWarriorFoot",   0,-10,20, 	  	-1,-1,random(2,7))
+				TNT1 A 0 A_SpawnItemEx("MythWarriorFoot", 	0,10,20,  	  	-1,1,random(2,7))
+								
+				TNT1 A 0 A_SpawnItemEx("MythWarriorArm",   0,-10,40,   		2,-4,random(2,7))
+				TNT1 A 0 A_SpawnItemEx("MythWarriorArm", 	0,10,40, 	  	2,4,random(2,7))
+								
+				TNT1 A 0 A_SpawnItemEx("MythWarriorShield",  4,10,40,   	1,-2,random(2,7))
+				TNT1 A 0 A_SpawnItemEx("MythWarriorShield",  4,10,40,   	1,-4,random(2,7))
+				
+				TNT1 A 0 A_SpawnItemEx("MythWarriorSWORD",  2,-10,30, 	  	1,4,random(2,7))
+				
+				TNT1 A 0 A_SpawnItemEx("MythWarriorHead",  	4,0,50,   		1,random(-7,7),random(2,7))
+				
+				TNT1 A 0 A_SpawnItemEx("MythWarriorMetal",  2,-10,50, 	  	-1,-2,random(2,7))
+				TNT1 A 0 A_SpawnItemEx("MythWarriorMetal",  2,10,50,  	 	-1,2,random(2,7))
+				
+				TNT1 A 0 A_SpawnItemEx("MythWarriorTorso",  -5,0,40,  	 	-2,random(-2,2),random(2,7))
+				 
+				stop
+				
+				
+	Death.Fire: 
+			TNT1 A 0 A_PlaySound("TORCHBRN",CHAN_6,0.6)  	
+		WAR4 ABCABCABC 4 BRIGHT	
+			TNT1 A 0 A_JUMP(256,11)
+		WAR3 ABCABCABC 4 BRIGHT
+			TNT1 A 0 a_Scream
+			TNT1 A 0 A_JUMP(128,11)
+		WAR4 DEFDEFDEF 4 BRIGHT
+			TNT1 A 0 A_JUMP(256,11)
+		WAR3 DEFDEFDEF 4 BRIGHT
+			TNT1 A 0 A_Pain 
+		WAR4 GHIGHIGHI 4 BRIGHT	 
+		WAR4 J -1	
+	STOP
+	
+  }
+}
+
+
+
+Actor WarShieldDefense //invisible actor spawn in front of monster, to act like well "shield"
+{
+	+NOGRAVITY
+	+SHOOTABLE
+	+NODAMAGE
+	+NOBLOOD
+	+NOTAUTOAIMED
+	tag "shield"
+	Radius 25
+	Height 45
+	
+	States
+	{
+	Spawn:
+		TNT1 A 4
+		Stop
+	}
+}
+
+actor  Fleshpuff: bulletpuff
+{ 
+   +PUFFONACTORS
+SeeSound "warr/attack2"
+}
+
+
+//================================================
+//  Particles
+//================================================
+
+ACTOR MythWarriorHead
+{
+  Radius 4
+  Height 4
+  +NOBLOCKMAP
+  +DROPOFF
+  GRAVITY 0.5
+  +CANNOTPUSH
+  +SKYEXPLODE
+  +NOBLOCKMONST
+  +HEXENBOUNCE
+  +FLOORCLIP
+  
+  States
+  {
+  Spawn:
+	TNT1 A 0 NoDelay A_Jump(256, 1, 2, 3, 4, 5, 6)
+	WBD3 G 1 {A_SpawnItemEx("blood", 0, 0, 2); return A_CheckFloor("Hit"); }
+	WBD3 H 1  A_CheckFloor("Hit")
+	WBD3 I 1 {A_SpawnItemEx("blood", 0, 0, 2); return A_CheckFloor("Hit"); }
+	WBD3 J 1  A_CheckFloor("Hit")
+	WBD3 K 1 {A_SpawnItemEx("blood", 0, 0, 2); return A_CheckFloor("Hit"); }
+	WBD3 L 1  A_CheckFloor("Hit")
+	Goto Spawn
+  Hit:
+	"####" "#" -1 
+	stop	
+  }
+}
+
+ACTOR MythWarriorTorso: MythWarriorHead
+{
+  States
+  {
+  Spawn:
+	TNT1 A 0 NoDelay A_Jump(256, 1, 2, 3, 4, 5, 6)
+	WBD3 ABCDEF 5 {A_SpawnItemEx("blood", 0, 0, 2); return A_CheckFloor("Hit"); }
+	Goto Spawn	
+  }
+}
+
+ACTOR MythWarriorArm: MythWarriorHead
+{
+  States
+  {
+  Spawn:
+	TNT1 A 0 NoDelay A_Jump(256, 1, 2, 3, 4, 5, 6)
+	WBD3 MNOPQR 5 {A_SpawnItemEx("blood", 0, 0, 2); return A_CheckFloor("Hit"); }
+	Goto Spawn
+}}
+
+ACTOR MythWarriorFoot: MythWarriorHead
+{
+  States
+  {
+  Spawn:
+	WBD3 STUVWX 5 {A_SpawnItemEx("blood", 0, 0, 2); return A_CheckFloor("Hit"); }
+	Goto Spawn
+}}
+
+ACTOR MythWarriorSWORD: MythWarriorHead
+{
+  States
+  {
+  Spawn:
+	WIT3 ABCDEF 5 A_CheckFloor("Hit")
+	Goto Spawn
+  }
+}
+
+ACTOR MythWarriorShield: MythWarriorHead
+{
+  States
+  {
+  Spawn:
+	WIT3 GHIJKL 5 A_CheckFloor("Hit")
+	Goto Spawn
+  }
+}
+
+ACTOR MythWarriorMetal: MythWarriorHead
+{
+  States
+  {
+  Spawn:
+	WIT3 MNOPQR 5 A_CheckFloor("Hit")
+	Goto Spawn
+}}
+
+
+
+/*
+//============================================
+// Spawner point - to sometimes spawn golem sometimes warrior
+//============================================
+
+
+
+ACTOR warriorM : warrior 
+{
++spriteflip
+}
+
+ACTOR Golem : Mummy 
+{
+
+}
+
+actor warriorMixer : RandomSpawner replaces Mummy
+{
+dropitem Golem
+dropitem warriorTalk  //spawn 2 faceing each other, like if they talking
+dropitem warriorSpawnPoint //spawn just 1
+}
+
+actor warriorTalk
+{
+ 
+  States
+  {
+  Spawn:
+	TNT1 A 0 NoDelay A_Jump(128, 4) 		 //50% chance for jump
+		TNT1 A 0 A_SpawnItemex("warriorSpawnPoint",-20,0,0,0,0,0,0,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION )  
+		TNT1 A 0 A_SpawnItemex("warriorSpawnPoint",20,0,0,0,0,0,180,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION )  
+	TNT1 A 0 A_Jump(256, 3) 
+		TNT1 A 0 A_SpawnItemex("warriorSpawnPoint",0,20,0,0,0,0,-90,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION )  
+		TNT1 A 0 A_SpawnItemex("warriorSpawnPoint",0,-20,0,0,0,0,90,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION )  
+		TNT1 A 0
+stop
+}}
+
+
+actor warriorSpawnPoint : RandomSpawner
+{
+dropitem warrior
+dropitem warrior
+dropitem warrior
+dropitem warriorM  //left handed 25% of times
+}
+
+
+ 

@@ -1,0 +1,7 @@
+Code: Lagi
+Sounds: BouncyTEM - Hollywood Edge Historical Series SFX Library
+Sprites: Bungie (Myth: the fallen lords).
+Sprite Edit:  Tyr, Lagi
+Idea Base: Heretic was always lacking for me, without a normal human knight with sword and shield.
+           I always wanted to have a guy looking like a Warrior from Myth the fallen lords. So I
+           just added one. I edited his legs so he looks less isometric.

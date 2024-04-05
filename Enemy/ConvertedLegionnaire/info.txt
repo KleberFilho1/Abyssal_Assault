@@ -1,0 +1,14 @@
+Name: Converted Legionnaire
+Difficulty: Easy
+Connections: None
+Summon: Warrior
+Melee: Yes
+Distance: No
+Type: Human
+Brightmaps: No
+Actor Modification: No
+ACS: No
+
+
+Description: Covering with his shield, and self-healing. But he is not immortal like a centaur. If
+you move behind him, you can shoot him down normally. He has 50hp.
