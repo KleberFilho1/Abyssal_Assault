@@ -9,6 +9,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func get_input():
+	#Entradas
 	var input_dir = Vector3()
 	if Input.is_action_pressed("move_forward"):
 		input_dir += -global_transform.basis.z
