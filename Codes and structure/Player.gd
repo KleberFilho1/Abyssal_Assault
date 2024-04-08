@@ -27,8 +27,14 @@ func get_input():
 	input_dir = input_dir.normalized() #cancelar stafe running
 	return input_dir
 
+#Função de fucionamento do mouse
 func _unhandled_input(event):
-	pass
+	#Verificando se à movimentação de mouse
+	if event is InputEventMouseMotion:
+		#Rotação do nó Player
+		rotate_y(-event.ralative.y * mouse_sensitivity)
+		$Pivot.rotate_x(event.relative.x * mouse_sensitivity)
+		$Pivot.rotattion.x = clamp($Pivot.rotation.x, -1.2,1.2)
 	
 func _physics_process(delta):
 	#gravidade
@@ -37,6 +43,8 @@ func _physics_process(delta):
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
 	velocity = move_and_slide(velocity, Vector3.UP, true)
+	
+	
 func change_gun(gun):
 	pass
 	
