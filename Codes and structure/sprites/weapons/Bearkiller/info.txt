@@ -1,0 +1,23 @@
+Name: Bearkiller Shotgun
+Class: 5
+Type: Hitscan
+Palette: Doom
+Summon: bearkiller
+Ammo Type: Shell
+Altfire: Yes
+Powered Mode: No
+Added States: No
+
+Credits:
+Submitted: Batandy
+Decorate: Batandy
+Sounds:Clive Barker Undying, Killing Floor
+Sprites: Killing floor's DBshotgun 
+Sprite Edit: Batandy 
+Idea Base: Killing Floor shotgun
+
+Description: 
+This is a double barrel shotgun called "Bearkiller" for its extreme power.Fires 2 bullets with a spread similiar to the super shotgun's one.Alt fire 
+makes you go for 3 seconds in an iron sight mode.Whit the alt-fire you reload slower than the normal fire but the shot is more accurate,useful for 
+shooting enemies at long range!
+Note:If you want bullet casing you have to remove the "//" near the A_SpawnItemEx in the decorate
