@@ -1,0 +1,927 @@
+//SMALL GUNFIRE
+FlickerLight2 SmallGunFire
+{
+Color 1.0 0.8 0.2
+Size 48
+SecondarySize 56
+Interval 1.0
+}
+//LARGE BLASTS (SSG, Chaingun, Minigun* (*F Sprites) & Explosives)
+Pointlight 	LargeGunFire
+{
+Color 1.0 0.8 0.2
+Size 52
+}
+pointlight AllyExpProjectile
+{
+    color 1.0 0.7 0.0
+    size 56
+}
+flickerlight ASEEKERM_X1
+{
+    color 1.0 0.7 0.0
+    size 64
+    secondarySize 72
+    chance 0.3
+}
+flickerlight ASEEKERM_X2
+{
+    color 0.5 0.1 0.0
+    size 80
+    secondarySize 88
+    chance 0.3
+}
+flickerlight ASEEKERM_X3
+{
+    color 0.3 0.0 0.0
+    size 96
+    secondarySize 104
+    chance 0.3
+}
+flickerlight ASEEKERM_X4
+{
+    color 1.0 0.7 0.0
+    size 64
+    secondarySize 72
+    chance 0.3
+}
+flickerlight ASEEKERM_X5
+{
+    color 1.0 0.7 0.0
+    size 104
+    secondarySize 128
+    chance 0.3
+}
+flickerlight ASEEKERM_X6
+{
+    color 1.0 0.5 0.0
+    size 96
+    secondarySize 104
+    chance 0.3
+}
+flickerlight ASEEKERM_X7
+{
+    color 0.3 0.0 0.0
+    size 96
+    secondarySize 104
+    chance 0.3
+}
+object HeatSeekingMissile
+{
+	frame HRKTA { light AllyExpProjectile }
+	frame FX08A { light ASEEKERM_X1 }
+    frame FX08B { light ASEEKERM_X2 }
+    frame FX08C { light ASEEKERM_X3 }
+	frame FX08D { light ASEEKERM_X4 }
+    frame FX08E { light ASEEKERM_X5 }
+    frame FX08F { light ASEEKERM_X6 }
+	frame FX08G { light ASEEKERM_X7 }
+}
+flickerlight MarineGRN_X1
+{
+    color 1.0 0.7 0.0
+    size 64
+    secondarySize 72
+    chance 0.3
+}
+flickerlight MarineGRN_X2
+{
+    color 0.5 0.1 0.0
+    size 80
+    secondarySize 88
+    chance 0.3
+}
+flickerlight MarineGRN_X3
+{
+    color 0.3 0.0 0.0
+    size 96
+    secondarySize 104
+    chance 0.3
+}
+Object MarineGrenade
+{
+	Frame MGRNA { Light AllyExpProjectile }
+	Frame MISLB { Light MarineGRN_X1 }
+	Frame MISLC { Light MarineGRN_X2 }
+	Frame MISLD { Light MarineGRN_X3 }
+}
+//Plasma
+FlickerLight2 PlasmaMarineAttack
+{
+Color 0.0 0.1 1.0
+Size 48
+SecondarySize 56
+Interval 1.0
+}
+//Railgun
+FlickerLight2 AllyRailgunFire
+{
+Color 0.0 0.3 0.9
+Size 48
+SecondarySize 56
+Interval 1.0
+}
+//BFG-9000
+PointLight AllyBFGFire
+{
+color 0.0 1.0 0.0
+size 80
+}
+FlickerLight ALLY10K_X1
+{
+Color 0.0 1.0 0.0
+Size 80
+SecondarySize 88
+Chance 0.3
+}
+FlickerLight ALLY10K_X2
+{
+Color 0.0 1.0 0.0
+Size 104
+SecondarySize 112
+Chance 0.3
+}
+FlickerLight ALLY10K_X3
+{
+Color 0.0 1.0 0.0
+Size 120
+SecondarySize 128
+Chance 0.3
+}
+//BFG-10K
+Object BFG10kMarineShot
+{
+Frame BFE1A0 { Light AllyBFGFire }
+Frame BFE1B0 { Light AllyBFGFire }
+Frame BFE1C0 { Light ALLY10K_X1 }
+Frame BFE1D0 { Light ALLY10K_X2 }
+Frame BFE1E0 { Light ALLY10K_X3 }
+}
+//Flamethrower Fire
+FlickerLight2 AllyThrowerFire
+{
+ Offset 0 2 0
+ Color 0.55 0.24 0.0
+ Size 40
+ SecondarySize 60
+ Interval 2.0
+}
+FlickerLight2 AllyFlames
+{
+ Offset 0 0 0
+ Color 0.55 0.24 0.0
+ Size 20
+ SecondarySize 30
+ Interval 2.0
+}
+Object MarineFTFire
+{
+	Frame FRFX { Light AllyThrowerFire }
+}
+Object MarineDropFire
+{
+	Frame FLME { Light AllyFlames }
+}
+//Small Fire Marines
+Object MarineAllyPistol
+{
+	Frame ALY2F { Light SmallGunFire }
+}
+Object MarineAllyMG
+{
+	Frame ALY3F { Light SmallGunFire }
+}
+Object MarineAllyCG //E & F Sprites Show Gunfire
+{
+	Frame ALY4E { Light SmallGunFire }
+}
+Object MarineAllySG
+{
+	Frame ALY5F { Light SmallGunFire }
+}
+Object MarineAllyMinigun
+{
+	Frame ALY6E { Light SmallGunFire }
+}
+Object MarineAllySniper
+{
+	Frame AL17F { Light SmallGunFire }
+}
+//Large Fire Marines
+Object MarineAllyCG
+{
+	Frame ALY4F { Light LargeGunFire }
+}
+Object MarineAllyMinigun
+{
+	Frame ALY6F { Light LargeGunFire }
+}
+Object MarineAllyRocket
+{
+	Frame ALY9F { Light LargeGunFire }
+}
+Object MarineAllySSG
+{
+	Frame AL11F { Light LargeGunFire }
+}
+Object MarineAllyHSMissile
+{
+	Frame AL13F { Light LargeGunFire }
+}
+Object MarineAllyGL
+{
+	Frame AL14F { Light LargeGunFire }
+}
+Object MarineAllyFlamethrower
+{
+	Frame AL15F { Light LargeGunFire }
+}
+//Plasma Weapon Marines
+Object MarineAllyPlasma
+{
+	Frame ALY8F { Light PlasmaMarineAttack }
+}
+Object MarineAllyRailgun
+{
+	Frame AL12F { Light AllyRailgunFire }
+}
+//Extreme Weapon Marines
+Object MarineAllyBFG9000
+{
+	Frame AL10F { Light AllyBFGFire }
+}
+Object MarineAllyBFG10K
+{
+	Frame AL15F { Light AllyBFGFire }
+}
+//BRIGHTMAPS: PISTOL
+BrightMap Sprite ALY2F1
+{
+Map BMALY2F1
+DisableFullBright
+}
+BrightMap Sprite ALY2F2
+{
+Map BMALY2F2
+DisableFullBright
+}
+BrightMap Sprite ALY2F3
+{
+Map BMALY2F3
+DisableFullBright
+}
+BrightMap Sprite ALY2F4
+{
+Map BMALY2F4
+DisableFullBright
+}
+BrightMap Sprite ALY2F5
+{
+Map BM1HAND5
+DisableFullBright
+}
+BrightMap Sprite ALY2F6
+{
+Map BMALY2F6
+DisableFullBright
+}
+BrightMap Sprite ALY2F7
+{
+Map BMALY2F7
+DisableFullBright
+}
+BrightMap Sprite ALY2F8
+{
+Map BMALY2F8
+DisableFullBright
+}
+//MACHINEGUN [DOOM PLAYER BRIGHTMAPS]
+BrightMap Sprite ALY3F1
+{
+Map BMALY3F1
+DisableFullBright
+}
+BrightMap Sprite ALY3F2F8
+{
+Map BMALY3F2
+DisableFullBright
+}
+BrightMap Sprite ALY3F3F7
+{
+Map BMALY3F3
+DisableFullBright
+}
+BrightMap Sprite ALY3F4F6
+{
+Map BMALY3F4
+DisableFullBright
+}
+BrightMap Sprite ALY3F5
+{
+Map BM2HAND5
+DisableFullBright
+}
+//CHAINGUN
+BrightMap Sprite ALY4F1
+{
+Map BMALY4E1
+DisableFullBright
+}
+BrightMap Sprite ALY4E2E8
+{
+Map BMALY4E2
+DisableFullBright
+}
+BrightMap Sprite ALY4E3E7
+{
+Map BMALY4E3
+DisableFullBright
+}
+BrightMap Sprite ALY4F1
+{
+Map BMALY4F1
+DisableFullBright
+}
+BrightMap Sprite ALY4F2F8
+{
+Map BMALY4F2
+DisableFullBright
+}
+BrightMap Sprite ALY4F3
+{
+Map BMALY4F3
+DisableFullBright
+}
+BrightMap Sprite ALY4F4
+{
+Map BMALY4F4
+DisableFullBright
+}
+BrightMap Sprite ALY4F5
+{
+Map BMALY4F5
+DisableFullBright
+}
+//SHOTGUN
+BrightMap Sprite ALY5F1
+{
+Map BMALY5F1
+DisableFullBright
+}
+BrightMap Sprite ALY5F2F8
+{
+Map BMALY5F2
+DisableFullBright
+}
+BrightMap Sprite ALY5F3F7
+{
+Map BMALY5F3
+DisableFullBright
+}
+BrightMap Sprite ALY5F4F6
+{
+Map BMALY5F4
+DisableFullBright
+}
+BrightMap Sprite ALY5F5
+{
+Map BM2HAND5
+DisableFullBright
+}
+//MINIGUN
+BrightMap Sprite ALY6G1
+{
+Map BMALY6G1
+DisableFullBright
+}
+BrightMap Sprite ALY6G2G8
+{
+Map BMALY6G2
+DisableFullBright
+}
+BrightMap Sprite ALY6G3G7
+{
+Map BMALY6G3
+DisableFullBright
+}
+BrightMap Sprite ALY6G4G6
+{
+Map BMALY6G4
+DisableFullBright
+}
+BrightMap Sprite ALY6G5
+{
+Map BMALY6G5
+DisableFullBright
+}
+//PLASMAGUN
+BrightMap Sprite ALY8F1
+{
+Map BMALY8F1
+DisableFullBright
+}
+BrightMap Sprite ALY8F2F8
+{
+Map BMALY8F2
+DisableFullBright
+}
+BrightMap Sprite ALY8F386
+{
+Map BMALY8F3
+DisableFullBright
+}
+BrightMap Sprite ALY8F4F6
+{
+Map BMALY8F4
+DisableFullBright
+}
+BrightMap Sprite ALY8F5
+{
+Map BMALPZF5
+DisableFullBright
+}
+//ROCKET LAUNCHER
+BrightMap Sprite ALY9F1
+{
+Map BMALY9F1
+DisableFullBright
+}
+BrightMap Sprite ALY9F2F8
+{
+Map BMALY9F2
+DisableFullBright
+}
+BrightMap Sprite ALY9F386
+{
+Map BMALY9F3
+DisableFullBright
+}
+BrightMap Sprite ALY9F4F6
+{
+Map BMALY9F4
+DisableFullBright
+}
+BrightMap Sprite ALY9F5
+{
+Map BMXPLDF5
+DisableFullBright
+}
+//BFG-9000 [INCLUDES LIGHTS FOR WALKING/PAIN, MADE FROM SCRATCH, IDEA BASED OFF BFG-COMMANDO BY scalliano]
+//[DEATH SPRITES FROM SCRATCH JUST TO ADD EMPHASIS ON EXPLODING WEAPON] DBJ87 13/01/17
+BrightMap Sprite AL10A1
+{
+Map BMAL10A1
+DisableFullBright
+}
+BrightMap Sprite AL10A2A8
+{
+Map BMAL10A2
+DisableFullBright
+}
+BrightMap Sprite AL10A3A7
+{
+Map BMAL10A3
+DisableFullBright
+}
+BrightMap Sprite AL10A4A6
+{
+Map BMAL10A4
+DisableFullBright
+}
+BrightMap Sprite AL10B1
+{
+Map BMAL10B1
+DisableFullBright
+}
+BrightMap Sprite AL10B2B8
+{
+Map BMAL10B2
+DisableFullBright
+}
+BrightMap Sprite AL10B3B7
+{
+Map BMAL10B3
+DisableFullBright
+}
+BrightMap Sprite AL10B4B6
+{
+Map BMAL10B4
+DisableFullBright
+}
+BrightMap Sprite AL10C1
+{
+Map BMAL10C1
+DisableFullBright
+}
+BrightMap Sprite AL10C2C8
+{
+Map BMAL10C2
+DisableFullBright
+}
+BrightMap Sprite AL10C3C7
+{
+Map BMAL10C3
+DisableFullBright
+}
+BrightMap Sprite AL10C4C6
+{
+Map BMAL10C4
+DisableFullBright
+}
+BrightMap Sprite AL10D1
+{
+Map BMAL10D1
+DisableFullBright
+}
+BrightMap Sprite AL10D2D8
+{
+Map BMAL10D2
+DisableFullBright
+}
+BrightMap Sprite AL10D3D7
+{
+Map BMAL10D3
+DisableFullBright
+}
+BrightMap Sprite AL10D4D6
+{
+Map BMAL10D4
+DisableFullBright
+}
+BrightMap Sprite AL10E1
+{
+Map BMAL10E1
+DisableFullBright
+}
+BrightMap Sprite AL10E2E8
+{
+Map BMAL10E2
+DisableFullBright
+}
+BrightMap Sprite AL10E3E7
+{
+Map BMAL10E3
+DisableFullBright
+}
+BrightMap Sprite AL10F1
+{
+Map BMAL10F1
+DisableFullBright
+}
+BrightMap Sprite AL10F2F8
+{
+Map BMAL10F2
+DisableFullBright
+}
+BrightMap Sprite AL10F3F7
+{
+Map BMAL10F3
+DisableFullBright
+}
+BrightMap Sprite AL10F4F6
+{
+Map BMAL10F4
+DisableFullBright
+}
+BrightMap Sprite AL10F5
+{
+Map BMALPZF5
+DisableFullBright
+}
+BrightMap Sprite AL10G1
+{
+Map BMAL10G1
+DisableFullBright
+}
+BrightMap Sprite AL10G2G8
+{
+Map BMAL10G2
+DisableFullBright
+}
+BrightMap Sprite AL10G3G7
+{
+Map BMAL10G3
+DisableFullBright
+}
+BrightMap Sprite AL10G4G6
+{
+Map BMAL10G4
+DisableFullBright
+}
+BrightMap Sprite AL10H0
+{
+Map BMAL10H0
+DisableFullBright
+}
+BrightMap Sprite AL10I0
+{
+Map BMAL10I0
+DisableFullBright
+}
+BrightMap Sprite AL10J0
+{
+Map BMAL10J0
+DisableFullBright
+}
+BrightMap Sprite AL10K0
+{
+Map BMAL10K0
+DisableFullBright
+}
+BrightMap Sprite AL10O0
+{
+Map BMAL10O0
+DisableFullBright
+}
+//SUPER-SHOTGUN
+BrightMap Sprite AL11F1
+{
+Map BMAL11F1
+DisableFullBright
+}
+BrightMap Sprite AL11F2F8
+{
+Map BMAL11F2
+DisableFullBright
+}
+BrightMap Sprite AL11F3F7
+{
+Map BMAL11F3
+DisableFullBright
+}
+BrightMap Sprite AL11F4F6
+{
+Map BMAL11F4
+DisableFullBright
+}
+BrightMap Sprite AL11F5
+{
+Map BM2HAND5
+DisableFullBright
+}
+//RAILGUN
+BrightMap Sprite AL12A1
+{
+Map BMAL12A1
+DisableFullBright
+}
+BrightMap Sprite AL12A2A8
+{
+Map BMAL12A2
+DisableFullBright
+}
+BrightMap Sprite AL12A3A7
+{
+Map BMAL12A3
+DisableFullBright
+}
+BrightMap Sprite AL12A4A6
+{
+Map BMAL12A4
+DisableFullBright
+}
+BrightMap Sprite AL12B1
+{
+Map BMAL12B1
+DisableFullBright
+}
+BrightMap Sprite AL12B2B8
+{
+Map BMAL12B2
+DisableFullBright
+}
+BrightMap Sprite AL12B3B7
+{
+Map BMAL12B3
+DisableFullBright
+}
+BrightMap Sprite AL12B4B6
+{
+Map BMAL12B4
+DisableFullBright
+}
+BrightMap Sprite AL12C1
+{
+Map BMAL12C1
+DisableFullBright
+}
+BrightMap Sprite AL12C2C8
+{
+Map BMAL12C2
+DisableFullBright
+}
+BrightMap Sprite AL12C3C7
+{
+Map BMAL12C3
+DisableFullBright
+}
+BrightMap Sprite AL12C4C6
+{
+Map BMAL12C4
+DisableFullBright
+}
+BrightMap Sprite AL12D1
+{
+Map BMAL12D1
+DisableFullBright
+}
+BrightMap Sprite AL12D2D8
+{
+Map BMAL12D2
+DisableFullBright
+}
+BrightMap Sprite AL12D3D7
+{
+Map BMAL12D3
+DisableFullBright
+}
+BrightMap Sprite AL12D4D6
+{
+Map BMAL12D4
+DisableFullBright
+}
+BrightMap Sprite AL12E2E8
+{
+Map BMAL12E2
+DisableFullBright
+}
+BrightMap Sprite AL12E3E7
+{
+Map BMAL12E3
+DisableFullBright
+}
+BrightMap Sprite AL12F1
+{
+Map BMAL12F1
+DisableFullBright
+}
+BrightMap Sprite AL12F2F8
+{
+Map BMAL12F2
+DisableFullBright
+}
+BrightMap Sprite AL12F3F7
+{
+Map BMAL12F3
+DisableFullBright
+}
+BrightMap Sprite AL12F4F6
+{
+Map BMAL12F4
+DisableFullBright
+}
+BrightMap Sprite AL12F5
+{
+Map BMALPZF5
+DisableFullBright
+}
+BrightMap Sprite AL12G1
+{
+Map BMAL12G1
+DisableFullBright
+}
+BrightMap Sprite AL120G2G8
+{
+Map BMAL12G2
+DisableFullBright
+}
+BrightMap Sprite AL12G4G6
+{
+Map BMAL12G4
+DisableFullBright
+}
+BrightMap Sprite AL12H0
+{
+Map BMAL12H0
+DisableFullBright
+}
+//BOMBARDIER (HEAT-SEEKING MISSILE LAUNCHER)
+BrightMap Sprite AL13F1
+{
+Map BMAL13F1
+DisableFullBright
+}
+BrightMap Sprite AL13F2F8
+{
+Map BMAL13F2
+DisableFullBright
+}
+BrightMap Sprite AL13F3F7
+{
+Map BMAL13F3
+DisableFullBright
+}
+BrightMap Sprite AL13F4F6
+{
+Map BMAL13F5
+DisableFullBright
+}
+BrightMap Sprite AL13F5
+{
+Map BMAL13F5
+DisableFullBright
+}
+//GRENADIER (GRENADE LAUNCHER)
+BrightMap Sprite AL14F1
+{
+Map BMAL14F1
+DisableFullBright
+}
+BrightMap Sprite AL14F2F8
+{
+Map BMAL14F2
+DisableFullBright
+}
+BrightMap Sprite AL14F3F7
+{
+Map BMAL14F3
+DisableFullBright
+}
+BrightMap Sprite AL14F4F6
+{
+Map BMAL14F4
+DisableFullBright
+}
+BrightMap Sprite AL14F5
+{
+Map BMXPLDF5
+DisableFullBright
+}
+//BFG-10K
+BrightMap Sprite AL15F1
+{
+Map BMAL15F1
+DisableFullBright
+}
+BrightMap Sprite AL15F2F8
+{
+Map BMAL15F2
+DisableFullBright
+}
+BrightMap Sprite AL15F3F7
+{
+Map BMAL15F3
+DisableFullBright
+}
+BrightMap Sprite AL15F4F6
+{
+Map BMAL15F4
+DisableFullBright
+}
+BrightMap Sprite AL15F5
+{
+Map BMALPZF5
+DisableFullBright
+}
+//FLAMETHROWER
+BrightMap Sprite AL16F1
+{
+Map BMAL16F1
+DisableFullBright
+}
+BrightMap Sprite AL16F2F8
+{
+Map BMAL16F2
+DisableFullBright
+}
+BrightMap Sprite AL16F3F7
+{
+Map BMAL16F3
+DisableFullBright
+}
+BrightMap Sprite AL16F4F6
+{
+Map BMAL16F4
+DisableFullBright
+}
+BrightMap Sprite AL16F5
+{
+Map BMXPLDF5
+DisableFullBright
+}
+//SNIPER RIFLE
+BrightMap Sprite AL17F1
+{
+Map BMAL17F1
+DisableFullBright
+}
+BrightMap Sprite AL17F2F8
+{
+Map BMAL17F2
+DisableFullBright
+}
+BrightMap Sprite AL17F3F7
+{
+Map BMAL17F3
+DisableFullBright
+}
+BrightMap Sprite AL17F4F6
+{
+Map BMAL17F4
+DisableFullBright
+}
+BrightMap Sprite AL17F5
+{
+Map BM2HAND5
+DisableFullBright
+}

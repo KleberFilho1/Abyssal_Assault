@@ -1,0 +1,69 @@
+  //Thank you yuraofthehairfan for suggesting this.
+  COLOUR BLENDING TUTORIAL
+  //Marine Translations & Colours:
+  Green: Translation "112:127=112:127" (You don't need to use this, Green by default)
+  Black: Translation "112:127=0:3"
+  Dark Red: Translation "112:127=32:47" [Crimson]
+  White: Translation "112:127=80:95"
+  Grey: Translation "112:127=96:113" [Light Grey like you'd get from GZDB Allies]
+  Light Brown: Translation "112:127=128:143"  
+  Tan Brown: Translation "112:127=144:151" [Star Base Tan]
+  Olive: Translation "112:127=152:159"
+  Yellow: Translation "112:127=160:165"
+  Bright Red: Translation "112:127=176:191"
+  Blue: Translation "112:127=192:207"
+  Orange: Translation "112:127=208:223"
+  Brown: Translation "112:127=224:231"
+  Navy Blue: Translation "112:127=240:247"
+  Pink: Translation "112:127=250:254"
+  
+  //"Team Deathmatch" Marines
+  While I don't use multi-player, I know a lot of Doomer's do.
+  So after an update from 10/02/16, I've followed up on an idea of allocating
+  colours to Marines for different teams as Allies after being suggested by
+  yuraofthehairfan. I've created this extra "patch" for you to change any of the 
+  Ally's colours to the available defaults in ZDoom/GZDoom & Zandronum...
+ 
+  Or you can also, make them easier to spot enemy Marines just take the 
+  "Friendly" attribute away from the Decorate. If you want to make these a Rival 
+  Marine set I suggest You a separate file* (Decorate, Sound Info WAD etc).
+  Then copy the marine sprites you want to use & add ONE of the colour range
+  Translations into the Decorate, place it anywhere before that Marine's 
+  "States". You can only change their colours by "Translation".
+  
+*Create a separate file & copy/paste everything from here if you want a full 
+Blue Team, a full Red Team etc & want to use both on the same map. You will have 
+to change the Summon codes & names too or one will overwrite the other...
+
+//Blending Tutorial 
+Copy & paste any of the "Translations" (Word "Translation" & the numbers) into
+a Marine's Decorate, placing it anywhere before the "States" commands.
+The Translations given only changes the Green suit that the Marine Ally has.
+
+Example:
+ 
+ actor MarineAllyFist 11811
+{
+  Game Doom
+  //$Category Monsters
+  //$Title Ally 01- Punch
+  //$Sprite ALLY01
+    Health 200
+	GibHealth -45
+    Radius 20
+    Height 56
+    Speed 15
+    PainChance 64
+	Translation "112:127=176:191"
+	//Green is now Bright Red
+  MONSTER
+  
+The colour range can only be within Doom's Palette & above is a list 15 new
+colours to choose from that (apart from black) aren't mono-toned & don't hide
+every detail on the marine's body...
+
+Remember you can make 1 or more Marines Blue, Red etc. on here, that's because,
+changing the colour will change the colour of that specific Marine, so this
+could help with say, character development or speciality labelling such as
+Greens are the standard Marines, Reds are the "Heavy Weapons" & Blues are the
+"Plasma weapons".

@@ -1,0 +1,3 @@
+Decorate: JoeyTD, Ghastly_dragon
+Sprites: JoeyTD, Id Software, 3D Realms
+Sounds: Id Software
