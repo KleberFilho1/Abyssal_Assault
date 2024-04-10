@@ -36,8 +36,7 @@ func _physics_process(delta):
 			if move:
 				$AnimatedSprite3D.play("walking")##
 				move_and_slide(direction.normalized() * speed, Vector3.UP)
-	else:
-		find_path(player.global_transform.origin)
+
 
 func find_path(target): #Função para contrar o caminho: "guair o inimigo até o jogador".
 	path = nav.get_simple_path(global_transform.origin, target) #Essa função serve básicamente serve para encontrar o caminho entre dois pontos distintos
@@ -55,3 +54,7 @@ func death():
 
 func shoot(target):
 	pass
+
+
+func _on_Timer_timeout():
+	find_path(player.global_transform.origin)

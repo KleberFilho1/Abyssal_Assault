@@ -1,0 +1,32 @@
+actor Uzi : Weapon 20002
+{
+	radius 20
+	height 16
+	inventory.pickupmessage "You got an Uzi."
+	Weapon.selectionorder 700
+	Weapon.AmmoUse 1
+	Weapon.Ammogive 30
+	Weapon.Ammotype "Clip"
+	inventory.icon "USMGA0"
+	attacksound "uzifire"
+	States
+	{
+	spawn:
+		USMG A 1
+		Loop
+	ready:
+		UZIG D 1 A_WeaponReady
+		Loop
+	deselect:
+		UZIG D 1 A_Lower
+		Loop
+	select:
+		UZIG D 1 A_Raise
+		Loop
+	fire:
+		UZIG B 1 A_FireBullets(2,2,1,8)
+		UZIG C 1
+		UZIG A 2
+		Goto Ready
+	}
+}

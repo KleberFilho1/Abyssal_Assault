@@ -75,8 +75,12 @@ offset = Vector2( -16, 0 )
 billboard = 2
 frames = SubResource( 2 )
 animation = "walking"
+frame = 3
 playing = true
 
 [node name="RayCast" type="RayCast" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
