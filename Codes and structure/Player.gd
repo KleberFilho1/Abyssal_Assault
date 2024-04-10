@@ -10,10 +10,12 @@ var mouse_sensitivility = 0.002
 #Armas
 onready var pistol = preload('res://scenes/Pistol.tscn')
 onready var shotgun = preload("res://scenes/Shotgun.tscn")
+onready var uzi = preload('res://scenes/Uzi.tscn')
+onready var rocketlaucher = preload('res://scenes/RocketLaucher.tscn')
 #Menu de armas
 var current_gun = 0
 #Colocar nova arma no vetor "carried_guns"
-onready var carried_guns = [pistol, shotgun]
+onready var carried_guns = [pistol, shotgun, uzi, rocketlaucher]
 
 #funções
 func _ready():
@@ -43,7 +45,7 @@ func _unhandled_input(event):
 		$Pivot.rotate_x(event.relative.y * mouse_sensitivility)
 		#Delimitando quantos radianos para cima e para baixo o jogador pode ver
 		#Basta altera '-1.2, 1.2', caso queira que o jogador olhe a pi/2 radianos.
-		$Pivot.rotation.x - clamp($Pivot.rotation.x,-1.2,1.2)
+		$Pivot.rotation.x - clamp($Pivot.rotation.y,-1.2,1.2)
 	
 func _physics_process(delta):
 	#gravidade \ colisão

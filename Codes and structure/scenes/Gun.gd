@@ -10,6 +10,7 @@ onready var flash = preload("res://scenes/MuzzleFlash.tscn")
 onready var blood = preload("res://scenes/Blood.tscn")
 
 var can_shoot = true
+export var rapid_fire = false
 
 #Valor do dano da arma
 var damage = 8
@@ -25,7 +26,7 @@ func check_hit():
 			#Verificando se o nó RayCast entro em contado com o grupo de nós "enemy"
 			if ray.get_collider().is_in_group('Enemy'):
 				#Dando dano no inimigo
-				ray.get_collider().take_demage(damage)
+				ray.get_collider().take_damage(damage)
 				#Colocando particulas (de sangue no inimigo morto)
 				var new_blood = blood.instance()
 				get_node('/root/World').add_child(new_blood)
@@ -40,7 +41,7 @@ func make_flash():
 
 #Função qeu faz atirar
 func _process(delta):
-	if Input.is_action_just_pressed("shoot") and can_shoot:
+	if Input.is_action_pressed("shoot") and can_shoot:
 		gun_sprite.play("shoot")
 		make_flash()
 		check_hit()
@@ -51,3 +52,8 @@ func _process(delta):
 		
 		can_shoot = true 
 		gun_sprite.play("idle")
+
+
+func _on_Timer_timeout():
+	can_shoot = true #Replace with fuction body.
+	

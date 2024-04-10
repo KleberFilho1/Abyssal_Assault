@@ -15,7 +15,7 @@ var move = true
 func _ready():
 	pass
 
-func take_demage(dmg_amount): #Função que faz o inimigo levar dano
+func take_damage(dmg_amount): #Função que faz o inimigo levar dano
 	health -= dmg_amount
 	if health <= 0: #Caso a vida do inimigo seja 0, ele morre
 		death()

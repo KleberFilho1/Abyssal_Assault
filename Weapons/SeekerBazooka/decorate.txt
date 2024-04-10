@@ -1,0 +1,119 @@
+actor SeekerBazooka : Weapon
+{
+  scale 0.75
+  radius 20 
+  height 16
+  inventory.pickupmessage "You got the Seeker BAZOOKA!"
+  weapon.selectionorder 2500
+  weapon.kickback 100
+  weapon.ammotype "rocketammo"
+  weapon.ammouse 1
+  weapon.ammogive 8
+  +WEAPON.EXPLOSIVE
+  //+WEAPON.NOAUTOFIRE
+  states
+  {
+  Ready:
+    RPGA A 1 A_WeaponReady
+    loop
+  Deselect:
+    RPGA A 1 A_Lower
+	NULL AA 0 A_LOWER
+    loop
+  Select:
+    RPGA A 1 A_Raise
+	NULL AA 0 A_RAISE
+    loop
+  Fire:
+    RPGA A 1
+	NULL A 0 A_PlayWeaponSound("SEEKLAUNCH")
+    RPGA B 2 bright A_FireCustomMissile ("SeekerRocket",0,1,9,-2) 
+    RPGA C 2 bright 
+	RPGA DEFEDHG 2
+	RPGA A 8
+	RPGA A 0 A_PlayWeaponSound("RPGOPN")
+	RPGA IJKLM 2
+	RPGA M 7
+	RPGA A 0 A_PlayWeaponSound("RPGLAD")
+	RPGA NOON 2
+	RPGA M 7
+	RPGA A 0 A_PlayWeaponSound("RPGOCLS")
+	RPGA MLKJI 2
+	RPGA A 4
+	Goto ready
+  Spawn:
+    RPGA Z -1
+	Stop
+  }
+}
+
+actor seekerRocket : MageStaffFX2
+{
+	Radius 12
+	Height 8
+	Speed 35
+	Damage 30
+	Projectile
+	Scale 0.74
+	+NOTIMEFREEZE
+      +EXTREMEDEATH
+	+ROCKETTRAIL
+	+SEEKERMISSILE
+	-RIPPER
+	DeathSound "DSQKLDTH"
+	States
+	{
+	Spawn:
+		QROK A 1 bright A_SeekerMissile(80,90)
+		NULL A 0 A_CustomMissile("seekerRockTrail",0,0,0,0)
+		QROK A 0 Bright A_LookEx(2,0,12,0,360,"See")
+	QROK A 0 Bright A_MStaffTrack
+	Loop
+    See:
+	QROK A 0 Bright A_MeleeAttack
+	QROK A 0 Bright A_Die
+	Death:
+		EXP3 A 2 Bright A_Explode(128,128,1)
+		NULL A 0 A_SpawnItem("ExtraExplosion")
+		EXP3 BCDEFGHIJKLMNOPQRSTUVWXYZ 1 Bright
+		Stop
+	}
+}
+
+actor seekerRockTrail
+{
+	Radius 1
+	Height 1
+	Speed 0
+	Damage 0
+	Scale 0.8
+	RenderStyle Add
+	Alpha 0.5
+	+NOGRAVITY
+	+NOTIMEFREEZE
+	States
+	{
+	Spawn:
+		SMO2 ABCDE 3
+		Stop
+	}
+}
+Actor ExtraExplosion
+{
+PROJECTILE
++NOCLIP
++NOTIMEFREEZE
+radius 6
+  height 8
+  mass 1
+  speed 35
+  //damage 20   too powerful :P
+States
+{
+Spawn:
+EXP2 A 2 Bright A_Explode
+EXP2 A 0 Radius_Quake(10,8,0,15,0)
+EXP2 ABCDEFGHIJKLMN 2 Bright A_SetTranslucent(1,1.0)
+stop
+}
+}
