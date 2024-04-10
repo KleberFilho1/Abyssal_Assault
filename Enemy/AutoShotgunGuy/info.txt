@@ -1,0 +1,15 @@
+Name: Auto Shotgun Zombie
+Difficulty: Easy(ish)
+Connections: None
+Summon: ASGGuy
+Melee: No
+Distance: Hitscan
+Type: Undead
+Brightmaps: Yes
+Actor modification: No
+ACS: No
+
+
+A zombie with an automatic shotgun that fires four shots in quick succession at a time and reloads
+after sixteen shots. Can take more damage than Doom's standard zombies, and can deal damage to the
+player very quickly at close ranges.

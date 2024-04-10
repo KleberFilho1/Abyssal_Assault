@@ -1,0 +1,78 @@
+//Credit to Skulltag Team & Captain Toenail for the Sprites.
+//Thank you yuraofthehairfan on Realm667 for suggesting this.
+//Thank You MagicWazard for help with easier activation via Flags.
+//Thank You to Blue Shadow for suggesting the changes to activation Radius.
+CAPTIVE MARINES: Bound Marines that can be killed by enemies & killed by you for 
+a couple of Stimpacks (you Monster! I hope you were desperate for that health!) 
+or freed if you activate them. They will then arm themselves with one of these:
+- Fist
+- Pistol
+- Machinegun
+- Chaingun
+- Shotgun
+- Chainsaw
+- Minigun
+- Plasmagun
+- Super-Shotgun
+
+The Spawned Marines are exactly the same as their counter-parts, meaning Health 
+is reset to 200% & they will follow & help you as normal. I recommend you space 
+them out a bit & don't place them too close to walls*. If a captive Marine is 
+dead, they won't activate when triggered. They have a higher Radius than 
+Allied Marines (Captives are technically Switchable Decorations) that you allow 
+to activate them without having to stand right next to them, current Radius is 
+32 units (default was 20) but anything up to 56 will be more realistic & help 
+with positioning, how easily you want to "Use" the Allies & spacing them out. 
+As long as you can step backward or strafe away from the direction they'll spawn, 
+you shouldn't lose them as often. Remember the Radius also effects how easily 
+bullets or explosive radius & melee attacks can damage the captives... so I 
+wouldn't set it higher than 32, or 40 (48 or 56 if you want even easier access).
+
+*Another thing you need to remember is that the Marines will spawn in the 
+Direction the Captive Marine Actor is facing when it was placed on the map. 
+As a safeguard to Tele-stomping the Player, if you or an enemy stays too close or 
+the bound marines are too close to walls or not spaced out far enough, the 
+captive Marine will just disappear when freed. This also stops freed Allies from 
+clipping inside walls like Lost Souls sometimes will do when a Pain Elemental is 
+killed in a confined space. It also stops them from clipping to ceilings.
+
+//ACTIVATION
+You need to Tag & give them a "Thing_Activate"** Command then Activate them via 
+triggered event*** or the Player can activate them by standing next to them & 
+pressing the "Use" Button (as if opening a door or activating a Switch).
+
+**Thing_Activate GZDoom Builder Action 130. I've tried using this when the 
+Marines are tagged 0, they won't activate as 0 is the calling actor (usually you), 
+I also recommend tagging each marine with a separate number, it might sound a 
+bit frustrating to some, but if all the Captives have the same number & one is 
+killed or activated by a player or an enemy, every one of the captives with the 
+same number will spring to life, equip a weapon & start attacking the enemies 
+etc... Useful for surprise attacks, but I seriously don't recommend this for 
+wide spread captives in different areas of a Map.
+https://zdoom.org/wiki/Thing_Activate 
+
+***Triggered Events: such as pressing a switch, walking over a special line or 
+any scripted action. This is best saved for scripts & leaving the decision to 
+free any captives up to you (the Player).
+
+Example: Tag a Captive 999, give him the "Thing_Activate" & set up another way 
+to activate him (collecting a weapon quickest example) with the same 
+"Thing_Activate" command, the killed Marine should not activate if his corpse is 
+touched & "used" by Player or any other trigger that would save him is started.
+//ACTIVATION FLAGS
+Triggered events was the original way to save the marines I'd set up. It still 
+has some use, so it's worth mentioning. But these are destroyable, Switchable 
+Decorations & +UseSpecial Flag was added for the Activation set up now in place. 
+
+https://zdoom.org/wiki/Creating_decorations_that_can_be_(de)activated
+
+Activation Flag Descriptions from ZDOOM Wiki:
++USESPECIAL
+The actor's special will be triggered when the player presses use while facing 
+this actor. The player will be considered the activator of the special.
+
++BUMPSPECIAL
+The actor's special will be triggered when the player touches this actor. 
+The player will be considered the activator of the special.
+/*I don't recommend +BUMPSPECIAL. You have more chance of losing the captive if 
+you accidentally walk into him or are knocked into him & don't or can't move.*/

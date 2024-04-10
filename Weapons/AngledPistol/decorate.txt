@@ -1,0 +1,37 @@
+Actor AngledPistol : Weapon  //Rename this!!!
+{
+  Scale 0.75
+  Obituary "%o was splattered by %k pistol"
+  Radius 20
+  Height 16
+  AttackSound "Weapon/PistolFire"
+  Inventory.pickupmessage "You got the Pistol"
+  Weapon.SelectionOrder 400
+  Weapon.SlotNumber 2
+  Weapon.kickback 100
+  Weapon.ammotype "CLIP"
+  Weapon.ammouse 1 
+  Weapon.ammogive 25
+  States
+  {
+  Spawn:
+    2PIS E -1
+    Loop
+  Ready:
+    2PIS A 2 A_WeaponReady
+    Loop
+  Deselect:
+    2PIS D 1 A_Lower
+    Loop
+  Select:
+    2PIS F 1 A_Raise
+    Loop
+  Fire:
+    2PIS A 1    
+    2PIS B 4 bright A_FireBullets(3, 3, 1, 5, "BulletPuff")
+    2PIS C 4 
+    2PIS F 4
+    2PIS D 4 A_ReFire
+    Goto Ready
+  }
+} 

@@ -1,0 +1,6 @@
+Code: scalliano, Popsoap, Ghastly_dragon (ZScript conversion)
+GLDefs: scalliano
+Sounds: Eriance
+Sprites: Id Software, Ghastly_dragon, Eriance, Xim
+Sprite Edit: scalliano
+Idea Base: Automatic Shotgun from Demon Eclipse & Stronghold

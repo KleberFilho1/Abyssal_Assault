@@ -1,0 +1,139 @@
+Name: Allied Marines
+Difficulty: Easy-Hard (If you disable Friendly Flag. They are intended to help the Player)
+Connection: Doom, Ally Marines, Cooperative Gameplay in Single Player
+Summon: MarineAlly"xx" (Fist, Pistol, MG, CG, SG, Minigun, Chainsaw, Plasma, Rocket, BFG9000, SSG, Railgun, HSMissile, GL, BFG10K, Flamethrower, Sniper)
+Melee: Melee Marine (Punch & uses a Charge attack) & Chainsaw Marine.
+Distance: Hitscan, Projectile, Explosive, Railgun, Seeker, Fire.
+Type: Human, Marines, Allies
+
+Info:
+17 Allied Marines with extensive behaviour changes including shooting, reaction 
+timing, movement speed & parameters, tracking & targeting as well as a Large 
+Arsenal of weapons to assist the Player. Also includes Captive Marines & Colour 
+Blend templates to increase diversity as Allies or additional Enemies. 
+
+Combat:
+Marines will attack any enemy on sight or continue to search for fresh targets. 
+If an enemy is nearby (even if you can't see it yet), they will stay close to 
+you trying to find a way to attack it. If no targets are in sight, they will 
+start to wander (excluding Chainsaw Marine.)
+
+Remember they aren't unstoppable killing machines, so don't expect to put your 
+feet up, while they do all the hard work for you. The Marines only have 200% 
+Health & varied pain chances. Friendly Fire isn't taken into consideration*.
+you can kill them, they can kill you.
+
+All Marines react quickly after being attacked. And will climb up steps up that
+are at a height of 32 or less & drop down from heights of 64 or less. This gives
+all the marines more freedom of movement & makes it easier for them to chase
+targets, you can push them around as well, but they can't be forced or knocked
+off any platform, they have to walk or teleport off that area themselves. All 
+Marines apart from the Fist & Chainsaw users try to avoid Melee damage. Allies 
+using explosives & snipers will back-pedal to try and escape as targets close in.
+
+*Rapid-firing Marines like Chainginners will stop shooting if you walk in front 
+of them but their attacks are based on enemy's distance from them, not your 
+distance between the Marine & it's target. Player is not immume to the
+Flamethrower's dropped fire, Plasma or Rail damage, Explosives or the 
+BFG-9000's Tracers.
+
+Death:
+Any Marine can be healed or revived, if an Archvile (or anything similar) does 
+so, the Marines will turn against each other & you. If you revive them, they 
+will remain allied to you, this is because revived actors side with to those who 
+revived them.
+
+They all drop* weapons or ammo when killed (except Melee, Flamethrower & Sniper).
+*Machinegun, Minigun, Grenadier, Railgun, BFG10K & Bombardier drop weapons or
+ammo that is closest to their associated weapons, but add whatever you want.
+Example: if you have a Railgun give it to the Railgun Marine, if you have a
+Sniper Rifle, give it to the Sniper Marine to create more realism.
+
+Extra Flags:
+Marines have the option of being effected by "NoTimeFreeze", "NoFear",
+"TeleStomp" or "LookAllAround". It's up to you whether they use it or not,
+just remove "//" before the stat in the decorate.
+
+//Melee/Punch: MarineAllyFist
+He's pumped up & PO'ed! Fast moving, but only attacks with fists.
+Damage output is similar to Revenant's punch attack. Can also charge & jump very
+quickly towards targets. If the walls are low enough he might jump at enemies on
+there but then climb up! Making him one of the most useful Marines in entire roster.
+//Pistol: MarineAllyPistol
+Has 2 sets of firing modes making the most of his wimpy weapon.
+-A standard single shot, usually his main offence.
+-A Quick burst of 3 shots.
+//Machinegun: MarineAllyMG
+Standard Infantry. Has 2 firing modes.
+-A "controlled" 3 Burst Shot, usually his main offence.
+-A Rapid-Fire shot like Chaingunner, which can take targets out quickly but he's
+more vulnerable to damage.
+//Chaingun: MarineAllyCG
+Acts like the Chaingunner Zombies but fires from a lot more earlier after seeing
+target, once locked onto an enemy, he won't stop firing the target is dead,
+has taken cover or if you get in front of his line of sight.
+//Shotgun: MarineAllySG
+Fast moving. Attacks at mid to close range.
+//Minigun: MarineAllyMinigun
+Like the Chaingunner, but will attack from an even longer distance & can take
+more damage because of his slower movement. Weapon is very fast & very powerful.
+Once locked onto a target he won't stop firing the target is dead,
+has taken cover or if you get in front of his line of sight.
+//Chainsaw: MarineAllyChainsaw
+Another fast Melee Marine, but with a chainsaw that does more damage then yours.
+//Plasmagun: MarineAllyPlasma
+Fires a continuous burst of plasma like the Machinegun Marine. Once locked onto
+a target he won't stop firing the target is dead, has taken cover or if you get
+in front of his line of sight.
+//Rocket Launcher: MarineAllyRocket
+Demolition expert! Fires 1 to 3 Rockets with 2 varied attacks. Will try to avoid 
+targets early as they close in.
+//BFG-9000: MarineAllyBFG9000
+Standard, wander & "fire when ready" behaviour. Oh! And he has the BFG-9000!
+Tempted to kill him yourself now, are we? ;) You'd be safer standing behind him, 
+as tracers from Ally's BFG will damage, Barrels, Enemies, other Allies & you!
+//Super-Shotgun MarineAllySSG
+Similar to Shotgun Marine, but a lot more powerful. Very slow firing rate but
+they make up for that with their powerful weaponry.
+//Railgun: MarineAllyRailgun
+Sniper, with a piercing Railgun attack. Will stand & shoot, then keep attacking
+with a slow rate of fire until the target has died, run away or if you get in
+front of his line of sight. Will also try to avoid targets early as they close in.
+//Bombardier: MarineAllyHSMissile
+Shoots a fast moving, homing missile. Will attack from a longer distance.
+The missile is highly accurate making this Marine a decent Sniper too. Will try 
+to avoid targets early as they close in.
+//Grenadier: MarineAllyGL
+Launches Timed Grenades that do more damage then Rockets or Homing Missiles. Will 
+try to avoid targets early as they close in.
+//BFG-10K: MarineAllyBFG10K
+Stand back & watch the fun! Rapid Firing BFG powered "Hit-scan" shots with an
+explosion radius, careful placement is required because he won't be killed
+easily. Avoids Melee as much as possible, once locked onto a target he won't
+stop firing the target is dead, has taken cover or if you get in front of his
+line of sight. Will try to avoid targets early as they close in.
+//Flamethrower: MarineAllyFlamethrower
+Will attack at mid-range, as if using a melee attack so keep him covered then
+let him pave the way for you, just don't stand on the fire! Friendly Fire is not
+funny ;) When an enemy is cornered, there's little chance they will survive.
+//Sniper: MarineAllySniper:
+Another True Sniper based Marine, bullets are fired as fast projectiles dealing
+mid to high damage. Will attack from a longer distance & avoid Melee attacks as
+much as possible. Will stay stationary & keep attacking like the Railgun Marine,
+with a slow rate of fire, until his current target has died, runs away or if
+you get in his line of sight. Will try to avoid targets early as they close in.
+
+Captive Marines: (See CAPTIVES for more detailed information.)
+//Credit to Skulltag, Captain Toenail for the Sprites.
+//Credit to yuraofthehairfan for helping & suggesting this.
+Bound Marines that can be shot & killed for a couple of Stimpacks (you Monster!) 
+or if you activate them, they will arm themselves with any of these weapons:
+- Fist
+- Pistol
+- Machinegun
+- Chaingun
+- Shotgun
+- Chainsaw
+- Minigun
+- Plasmagun
+- Super-Shotgun

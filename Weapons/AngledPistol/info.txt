@@ -1,0 +1,9 @@
+Name: Angled Pistol
+Class: 2
+Type: Hitscan
+Palette: Doom
+Summon: AngledPistol
+Ammo Type: Clip
+Altfire: No
+Powered Mode: No
+Added States: No

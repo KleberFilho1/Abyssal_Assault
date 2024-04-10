@@ -1,0 +1,82 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzc1.png" type="Texture" id=1]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzg1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzw0.png" type="Texture" id=3]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzv0.png" type="Texture" id=4]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzb1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgza1.png" type="Texture" id=6]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzs0.png" type="Texture" id=7]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzt0.png" type="Texture" id=8]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzu0.png" type="Texture" id=9]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzf1.png" type="Texture" id=10]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzo0.png" type="Texture" id=11]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgze1.png" type="Texture" id=12]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzi0.png" type="Texture" id=13]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzj0.png" type="Texture" id=14]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzl0.png" type="Texture" id=15]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzn0.png" type="Texture" id=16]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzd1.png" type="Texture" id=17]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzp0.png" type="Texture" id=18]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzm0.png" type="Texture" id=19]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzq0.png" type="Texture" id=20]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzr0.png" type="Texture" id=21]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzh0.png" type="Texture" id=22]
+[ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzk0.png" type="Texture" id=23]
+[ext_resource path="res://scenes/EnemyBasicGrunt.gd" type="Script" id=24]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 23 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 16 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "explode",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "hit",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "shoot",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "walking",
+"speed": 5.0
+} ]
+
+[node name="EnemyBasicGrunt" type="KinematicBody" groups=["Enemy"]]
+script = ExtResource( 24 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform( 3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, -0.00581098, -0.984425, -0.0321029 )
+centered = false
+offset = Vector2( -16, 0 )
+billboard = 2
+frames = SubResource( 2 )
+animation = "walking"
+playing = true
+
+[node name="RayCast" type="RayCast" parent="."]
+
+[node name="Timer" type="Timer" parent="."]

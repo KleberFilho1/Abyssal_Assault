@@ -1,0 +1,93 @@
+//Ranged Marine's Sight
+$random Ally/Site { See1 See2 }
+See1	ALLYSITE
+See2	ALLYACTV
+//Marine Pain
+Ally/Pain ALLYPAIN
+//Marine Death
+Ally/Death ALLYDIE 
+//Marine Active (Searching etc)
+Ally/Active ALLYACTV
+//Melee Marine Swing
+Ally/Fist ALFistGo
+//Melee Marine Punch Impact
+Ally/PunchImpact ALYPUNCH
+//Melee Marine Charge Ready
+Ally/PunchChargeReady KNUXCRAK
+//Melee Marine Charge Jump
+Ally/PunchChargeJump ALYPCHRG
+
+//Pistol Marine
+ALPist/Fire1 AL10PSF1
+ALPist/Fire2 AL10PSF2
+$random ALPist/FIRE { ALPist/Fire1 ALPist/Fire2 }
+$Limit ALPist/FIRE 0
+
+//Machinegun Marine
+$random ALMG/Fire {ALMG1 ALMG2 ALMG3}
+ALMG1 ALMGFIR1
+ALMG2 ALMGFIR2
+ALMG3 ALMGFIR3
+
+//Minigun Marine
+ALMini/ALMinigun ALMINIGN
+
+//Chainsaw Marine
+ALCSaw/Sight ALYSAWS
+
+//Super Shotgun Marine
+ALSSG/Fire	ALLYSSG
+
+//Bombardier (Seeker Missile Launcher) Ready to Fire
+Ally/SeekerReady ALYBRDY
+//Heat-Seeking Missile Fire
+Ally/Seeker   ALLYSEEK
+//Heat-Seeking Missile Explode
+Seeker/Explode SEEKXPLD
+
+//Grenadier Marine
+//Fire
+Ally/Grenfire	ALGFIRE
+//Open
+Ally/Reload1	ALGOPEN
+//Load
+Ally/Reload2	ALGLOAD
+//Close
+Ally/Reload3	ALGCLOS
+//Grenade Bounce
+Ally/GrenadeBounce ALGBOIN
+//Grenade Explode
+Ally/GrenadeBang ALGRNEX
+
+//BFG-10K
+//Fire Start
+BFG10kMarine/ShotStart	ABFG10K1
+//BFG-10K Attack Sound
+marine/bfg10kx			ALGRNEX
+//Fire End
+BFG10kMarine/ShotEnd	ABFG10K2
+
+//Flamethrower
+Marine/Flamer			ALFLAMER
+Marine/Scorch			ALSCORCH
+Marine/FlameReady		ALLYPAI3
+weapons/flmridle		ALFIMDLE
+weapons/onfire			ALFLAME
+
+//Sniper
+Marine/SniperFire			ALSNPRFI
+Marine/SniperReload			ALSNPRRE
+Marine/SniperBulletloop		ALSNPRFL
+//Sniper Bullet Impact
+$Random Marine/SniperFleshHit { SNPRFHT1 SNPRFHT2 SNPRFHT3 }
+SNPRFHT1	ALSRFHT1
+SNPRFHT2	ALSRFHT2
+SNPRFHT3	ALSRFHT3
+$Volume Marine/SniperFleshHit 0.4
+
+$Random Marine/SniperWallHit { SNPRWHT1 SNPRWHT2 SNPRWHT3 SNPRWHT4 }
+SNPRWHT1	ALSRWHT1
+SNPRWHT2	ALSRWHT2
+SNPRWHT3	ALSRWHT3
+SNPRWHT4	ALSRWHT4
+$Volume Marine/SniperWallHit 0.4
