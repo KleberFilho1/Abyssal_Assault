@@ -7,7 +7,13 @@ var max_speed = 8
 var mouse_sensitivility = 0.002
 
 #variáveis das armas
-
+#Armas
+onready var pistol = preload('res://scenes/Pistol.tscn')
+onready var shotgun = preload("res://scenes/Shotgun.tscn")
+#Menu de armas
+var current_gun = 0
+#Colocar nova arma no vetor "carried_guns"
+onready var carried_guns = [pistol, shotgun]
 
 #funções
 func _ready():
@@ -47,11 +53,22 @@ func _physics_process(delta):
 	velocity.z = desired_velocity.z
 	velocity = move_and_slide(velocity, Vector3.UP, true)
 
-
-	
+#Função que faz animação de trocar de arma
 func change_gun(gun):
-	pass
-	
+	$Pivot/Gun.get_child(0).queue_free()
+	var new_gun = carried_guns[gun].instance()
+	$Pivot/Gun.add_child(new_gun)
+
+#Função que faz mudar de arma (ou adicionar mais uma arma)
 func _process(delta):
-	pass
-	
+	if Input.is_action_just_pressed('next_gun'):
+		current_gun += 1
+		if current_gun > len(carried_guns)-1:
+			current_gun = 0
+		change_gun(current_gun)
+	elif Input.is_action_just_released("prev_gun"):
+		current_gun -= 1
+		if current_gun < 0:
+			current_gun = len(carried_guns)-1
+		change_gun(current_gun)
+			

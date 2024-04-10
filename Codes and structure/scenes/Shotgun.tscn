@@ -1,0 +1,97 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://sprites/weapons/shotGun/kfdbd0.png" type="Texture" id=1]
+[ext_resource path="res://sprites/weapons/shotGun/kfdbk0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/weapons/shotGun/kfdbm0.png" type="Texture" id=3]
+[ext_resource path="res://sprites/weapons/shotGun/kfdbh0.png" type="Texture" id=4]
+[ext_resource path="res://sprites/weapons/shotGun/kfdbn0.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Gun.gd" type="Script" id=6]
+[ext_resource path="res://sprites/weapons/shotGun/kfdbp0.png" type="Texture" id=7]
+[ext_resource path="res://sprites/weapons/shotGun/kfdbe0.png" type="Texture" id=8]
+[ext_resource path="res://sprites/weapons/shotGun/kfdbo0.png" type="Texture" id=9]
+[ext_resource path="res://sprites/weapons/shotGun/kfdbb0.png" type="Texture" id=10]
+[ext_resource path="res://sprites/weapons/shotGun/kfdbl0.png" type="Texture" id=11]
+[ext_resource path="res://sprites/weapons/shotGun/kfdbc0.png" type="Texture" id=12]
+[ext_resource path="res://sprites/weapons/shotGun/kfdbj0.png" type="Texture" id=13]
+[ext_resource path="res://sprites/weapons/shotGun/kfdbi0.png" type="Texture" id=14]
+[ext_resource path="res://sprites/weapons/shotGun/kfdba0.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "shoot",
+"speed": 10.0
+} ]
+
+[node name="Shotgun" type="Spatial"]
+script = ExtResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -40.0
+
+[node name="GunSprite" type="AnimatedSprite" parent="CanvasLayer/Control"]
+position = Vector2( -159, 40 )
+rotation = 3.14159
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "shoot"
+frame = 8
+playing = true
+centered = false
+flip_h = true
+flip_v = true
+
+[node name="GunRays" type="Spatial" parent="."]
+
+[node name="RayCast" type="RayCast" parent="GunRays"]
+transform = Transform( 1, 0, 0, 0, 0.999507, -0.0313933, 0, 0.0313933, 0.999507, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -20 )
+
+[node name="RayCast2" type="RayCast" parent="GunRays"]
+transform = Transform( 1, 0, 0, 0, 0.999715, 0.0238738, 0, -0.0238738, 0.999715, 0.00818539, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -10 )
+
+[node name="RayCast3" type="RayCast" parent="GunRays"]
+transform = Transform( 1, 0, 0, 0, 0.998808, -0.0488149, 0, 0.0488149, 0.998808, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -15 )
+
+[node name="RayCast4" type="RayCast" parent="GunRays"]
+transform = Transform( 0.996968, 0, 0.0778153, 0, 1, 0, -0.0778153, 0, 0.996968, 0.00818539, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -10 )
+
+[node name="RayCast5" type="RayCast" parent="GunRays"]
+transform = Transform( 0.998946, -0.00159881, -0.0458756, 0, 0.999393, -0.0348297, 0.0459035, 0.034793, 0.99834, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -20 )
+
+[node name="RayCast6" type="RayCast" parent="GunRays"]
+transform = Transform( 0.996616, 0.00162679, 0.0821833, 0, 0.999804, -0.0197907, -0.0821994, 0.0197238, 0.996421, 0.00818539, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -10 )
+
+[node name="RayCast7" type="RayCast" parent="GunRays"]
+transform = Transform( 0.998388, -0.00506658, -0.0565359, 0, 0.996008, -0.0892594, 0.0567625, 0.0891154, 0.994403, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -15 )
+
+[node name="RayCast8" type="RayCast" parent="GunRays"]
+transform = Transform( 1, 0, 0, 0, 0.999983, -0.00586427, 0, 0.00586427, 0.999983, 0.00818539, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -10 )

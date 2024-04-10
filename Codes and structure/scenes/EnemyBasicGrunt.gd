@@ -10,6 +10,7 @@ var path_index = 0 #Acompanha qual coordenada precisa ir
 var speed = 3 #Velocidade do inimigo
 var health = 20 #Quantidade de vida do inimigo
 
+var move = true
 
 func _ready():
 	pass
@@ -18,14 +19,23 @@ func take_demage(dmg_amount): #Função que faz o inimigo levar dano
 	health -= dmg_amount
 	if health <= 0: #Caso a vida do inimigo seja 0, ele morre
 		death()
-
+		return
+	#Aperfeiçoamentos na animação
+	move = false
+	$AnimatedSprite3D.play("hit")
+	yield($AnimatedSprite3D, "animation_finished")
+	#$AnimatedSprite3D.play("walking")
+	move = true
+	
 func _physics_process(delta):
 	if path_index < path.size():
 		var direction = (path[path_index] - global_transform.origin)
 		if direction.length() < 1: #Vetor tridimensional que representar uma direção, distância e módulo 
 			path_index += 1
 		else:
-			move_and_slide(direction.normalized() * speed, Vector3.UP)
+			if move:
+				$AnimatedSprite3D.play("walking")##
+				move_and_slide(direction.normalized() * speed, Vector3.UP)
 	else:
 		find_path(player.global_transform.origin)
 
