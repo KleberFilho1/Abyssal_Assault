@@ -41,11 +41,11 @@ func make_flash():
 
 #Função qeu faz atirar
 func _process(delta):
-	if Input.is_action_pressed("shoot") and can_shoot and PlayerStats.ammo_pistol > 0:
+	if Input.is_action_pressed("shoot") and can_shoot and PlayerStats.ammo_shells > 0:
 		gun_sprite.play("shoot")
 		make_flash()
 		check_hit()
-		PlayerStats.change_pistol_ammo(-1)
+		PlayerStats.change_shotgun_ammo(-1)
 		can_shoot = false
 		
 		#Função de redimento

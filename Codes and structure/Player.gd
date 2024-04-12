@@ -1,5 +1,6 @@
 extends KinematicBody
 
+
 #Váriaveis de configurações de escopo global
 var velocity = Vector3()
 var gravity = -30
@@ -47,6 +48,7 @@ func _unhandled_input(event):
 		#Basta altera '-1.2, 1.2', caso queira que o jogador olhe a pi/2 radianos.
 		$Pivot.rotation.x - clamp($Pivot.rotation.y,-1.2,1.2)
 	
+#Função de eventos físicos (Gravidade e colisão)
 func _physics_process(delta):
 	#gravidade \ colisão
 	velocity.y += gravity * delta
@@ -60,6 +62,7 @@ func change_gun(gun):
 	$Pivot/Gun.get_child(0).queue_free()
 	var new_gun = carried_guns[gun].instance()
 	$Pivot/Gun.add_child(new_gun)
+	PlayerStats.current_gun = new_gun.name
 
 #Função que faz mudar de arma (ou adicionar mais uma arma)
 func _process(delta):
