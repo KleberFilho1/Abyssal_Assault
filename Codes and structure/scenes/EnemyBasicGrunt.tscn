@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzc1.png" type="Texture" id=1]
 [ext_resource path="res://sprites/enemy/AutoShotgunGuy/asgzg1.png" type="Texture" id=2]
@@ -61,6 +61,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CylinderShape" id=3]
+radius = 13.0483
+
 [node name="EnemyBasicGrunt" type="KinematicBody" groups=["Enemy"]]
 script = ExtResource( 24 )
 
@@ -75,11 +78,25 @@ offset = Vector2( -16, 0 )
 billboard = 2
 frames = SubResource( 2 )
 animation = "walking"
+frame = 3
 playing = true
 
-[node name="RayCast" type="RayCast" parent="."]
+[node name="Visual" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, -20 )
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="Aural" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Aural"]
+shape = SubResource( 3 )
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Aural" to="." method="_on_Aural_body_entered"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]

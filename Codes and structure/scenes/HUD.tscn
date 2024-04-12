@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/Doom.fnt" type="BitmapFont" id=1]
+[ext_resource path="res://scenes/HUD.gd" type="Script" id=2]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+mouse_filter = 2
+theme = SubResource( 1 )
+
+[node name="Stats" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 984.0
+margin_bottom = 560.0
+mouse_filter = 2
+
+[node name="Labels" type="VBoxContainer" parent="MarginContainer/Stats"]
+margin_right = 120.0
+margin_bottom = 560.0
+rect_min_size = Vector2( 120, 0 )
+mouse_filter = 2
+alignment = 2
+
+[node name="Armorlabel" type="Label" parent="MarginContainer/Stats/Labels"]
+margin_top = 512.0
+margin_right = 120.0
+margin_bottom = 534.0
+text = "Armor"
+
+[node name="Healthlabel" type="Label" parent="MarginContainer/Stats/Labels"]
+margin_top = 538.0
+margin_right = 120.0
+margin_bottom = 560.0
+text = "Health"
+
+[node name="Values" type="VBoxContainer" parent="MarginContainer/Stats"]
+margin_left = 124.0
+margin_right = 204.0
+margin_bottom = 560.0
+rect_min_size = Vector2( 80, 0 )
+mouse_filter = 2
+alignment = 2
+
+[node name="ArmorValue" type="Label" parent="MarginContainer/Stats/Values"]
+margin_top = 512.0
+margin_right = 80.0
+margin_bottom = 534.0
+text = "0"
+align = 2
+
+[node name="HealthValue" type="Label" parent="MarginContainer/Stats/Values"]
+margin_top = 538.0
+margin_right = 80.0
+margin_bottom = 560.0
+text = "100"
+align = 2
+
+[node name="Ammo" type="VBoxContainer" parent="MarginContainer/Stats"]
+margin_left = 208.0
+margin_right = 984.0
+margin_bottom = 560.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="AmmoValue" type="Label" parent="MarginContainer/Stats/Ammo"]
+margin_top = 538.0
+margin_right = 776.0
+margin_bottom = 560.0
+text = "0"
+align = 2

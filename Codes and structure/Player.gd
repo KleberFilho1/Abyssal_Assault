@@ -21,6 +21,7 @@ onready var carried_guns = [pistol, shotgun, uzi, rocketlaucher]
 #funções
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	change_gun(0)
 	
 func get_input():
 	#Entradas de movimentação
