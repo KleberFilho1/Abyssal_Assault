@@ -1,0 +1,6 @@
+Name: Armor Sphere
+Type: Armor
+Palette: Other
+Summon: ArmorSphere
+Use type: Instant
+Duration: Instant

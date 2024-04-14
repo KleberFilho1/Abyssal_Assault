@@ -1,0 +1,13 @@
+PulseLight ArmorSphere
+{
+Color 1.0 0.3 1.0
+Size 32
+SecondarySize 48
+Interval 4.0
+Offset 0 24 0
+}
+
+Object ArmorSphere
+{
+Frame ARSP { Light ArmorSphere }
+}

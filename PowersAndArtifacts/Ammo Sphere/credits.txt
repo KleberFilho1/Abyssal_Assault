@@ -1,0 +1,6 @@
+Submitted: Dreadopp
+Decorate: Dreadopp
+GLDefs: Dreadopp
+Sounds: Id Software
+Sprites: Id Software
+Sprite Edit: Dreadopp

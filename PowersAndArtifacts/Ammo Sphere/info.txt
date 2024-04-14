@@ -1,0 +1,6 @@
+Name: Ammo Sphere
+Type: Ammo
+Palette: Custom
+Summon: AmmoSphere
+Use Type: Instant
+Duration: 30 seconds

@@ -1,0 +1,110 @@
+#library "Recharge.acs"
+#include "zcommon.acs"
+
+#define EMERGENCY_HEALTH_LOWERLIMIT 50
+#define EMERGENCY_HEALTH_UPPERLIMIT 100
+#define REGEN_TYPES 2
+#define REGEN_AMOUNT 7
+
+int RegenCount[REGEN_AMOUNT] = { "HealthRegenCount",
+                                 "MedikitRegenCount",
+								 "StimpackRegenCount", 
+								 "MediPatchRegenCount",
+								 "MediPackRegenCount",
+								 "SurgicalPackRegenCount",
+								 "ArmorRegenCount" };
+
+int RegenControlItem[REGEN_AMOUNT] = { "HealthRegenControlItem",
+									   "MedikitRegenControlItem",
+									   "StimpackRegenControlItem",
+									   "MediPatchRegenControlItem",
+									   "MediPackRegenControlItem",
+									   "SurgicalPackRegenControlItem",
+									   "ArmorRegenControlItem" };
+
+int WelfarePowerupItem[REGEN_TYPES] = { "RechargeHealthItem",
+                                        "RechargeArmorItem" };
+
+
+// HP and AP Regen effects should be kept in map changes
+Script "RechargeStartingScript" ENTER
+{
+	int regenArray[REGEN_AMOUNT] = {0};
+	
+	for (int i = 0; i < REGEN_AMOUNT; i++)
+	{
+		regenArray[i] = CheckInventory(RegenControlItem[i]);
+		
+		while (regenArray[i])
+		{
+			ACS_NamedExecuteAlways("RechargeWelfareRegenerationScript", 0, i, 0, 0);
+			regenArray[i]--;
+		}
+	}
+}
+
+// Removes the internal counter for Emergency Health Restore so they can get another one
+Script "RechargePlayerRespawn" RESPAWN
+{
+	TakeInventory("RechargeEmergencyHealthRestoreCount", 1);
+}
+
+/**
+ * welfareType: 0 to 5 - Health, 6 - Armor
+**/
+Script "RechargeWelfareRegenerationScript" (int welfareType)
+{
+	int welfareItem;
+	
+	/// Only if welfareType == 6 it should give armor; for the others, health
+	if (welfareType < REGEN_AMOUNT-1)
+		welfareItem = 0;
+	else
+		welfareItem = 1;
+		
+	while (!CheckFlag(0, "CORPSE") && CheckInventory(RegenCount[welfareType]))
+	{
+		GiveInventory(WelfarePowerupItem[welfareItem], 1);
+		TakeInventory(RegenCount[welfareType], 1);
+		Delay(4);
+	}
+	
+	TakeInventory(RegenControlItem[welfareType], 1);
+}
+
+Script "RechargeEmergencyHealthRestoreScript" (void)
+{
+	int health, notrestored = 1;
+	
+	while (!CheckFlag(0, "CORPSE") && notrestored)
+	{
+		health = GetActorProperty(0, APROP_Health);
+		
+		if (health < EMERGENCY_HEALTH_LOWERLIMIT)
+		{
+			ACS_NamedExecuteAlways("RechargeHealth_Emergency", 0, 0, 0, 0);
+			notrestored = 0;
+		}
+		
+		Delay(1);
+	}
+}
+
+Script "RechargeHealth_Emergency" (void)
+{
+	int health, limitreached = 0;
+	
+	while (!CheckFlag(0, "CORPSE") && !limitreached)
+	{
+		health = GetActorProperty(0, APROP_Health);
+		
+		if (health < EMERGENCY_HEALTH_UPPERLIMIT)
+			SetActorProperty(0, APROP_Health, health+1);
+		else
+			limitreached = 1;
+		
+		Delay(2);
+	}
+	
+	TakeInventory("RechargeEmergencyHealthRestoreCount", 1);
+}

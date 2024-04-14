@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Level1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/EnemyBasicGrunt.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/HealthPickup.tscn" type="PackedScene" id=5]
+
+[node name="World" type="Spatial"]
+
+[node name="HUD" parent="." instance=ExtResource( 1 )]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -0.711 )
+
+[node name="Level 1" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 0, 0, 0 )
+
+[node name="EnemyBasicGrunt" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4285, 0.318288, 23.2151 )
+
+[node name="EnemyBasicGrunt2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.512, 0, 24.8628 )
+
+[node name="EnemyBasicGrunt3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6363, 0, 24.8628 )
+
+[node name="EnemyBasicGrunt4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9914, 0, -3.93421 )
+
+[node name="EnemyBasicGrunt5" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9914, 0, 2.01161 )
+
+[node name="HealthPickup" parent="." instance=ExtResource( 5 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 5.17039, 0, -7.20081 )

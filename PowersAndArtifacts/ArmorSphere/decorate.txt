@@ -1,0 +1,18 @@
+Actor ArmorSphere : BasicArmorPickup
+{
+  Radius 20
+  Height 16
+  Inventory.PickupSound "Misc/P_PkUp"
+  Inventory.Pickupmessage "Armor Sphere!"
+  Inventory.Icon "ARM2A0"
+  +CountItem
+  +Inventory.FancyPickupSound
+  Armor.Savepercent 50
+  Armor.Saveamount 300
+  States
+  {
+  Spawn:
+    ARSP ABCB 10 Bright
+    Loop
+  }
+}

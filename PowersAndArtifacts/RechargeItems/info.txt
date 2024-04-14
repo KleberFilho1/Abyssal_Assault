@@ -1,0 +1,27 @@
+Name: Recharge Items
+Type: Custom regeneration
+Palette: Custom (various sources)
+Summon: HealthRechargeSphere, ArmorRechargeSphere, HealthAndArmorRechargeSphere, RechargeStimpack,
+        RechargeMedikit, RechargeMediPatch, RechargeMediPack, RechargeSurgicalPack,
+        RechargeEmergencyHealthRestore
+Use type: Instant
+Duration: Varies
+Brightmaps: No
+Actor Modification: No
+ACS: Yes
+
+
+Once picked up, the Recharge Items regenerate up to a certain amount of health or armor periodically.
+These items can go beyond the conventional health or armor limits, up to 250 each. Their effects
+also persist after map change. They are listed below:
+
+- HealthRechargeSphere: regens health, up to 100 points
+- ArmorRechargeSphere: regens armor, up to 100 points
+- HealthAndArmorRechargeSphere: regens health and armor, up to 200 points
+- RechargeMedikit: regens health, up to 25 points
+- RechargeStimpack: regens health, up to 10 points
+- RechargeMediPatch: regens health, up to 15 points
+- RechargeMediPack: regens health, up to 50 points
+- RechargeSurgicalPack: regens health, up to 75 points
+- RechargeEmergencyHealthRestore: regens health fast, when the player reaches less than 50 HP,
+  up to 100 HP

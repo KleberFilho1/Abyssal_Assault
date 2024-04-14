@@ -1,0 +1,10 @@
+Pointlight AmmoSphereLight
+{
+	Color 0.8 0.0 0.0
+	Size 18
+}
+
+Object AmmoSphere
+{
+	Frame AMSP { Light AmmoSphereLight }
+}

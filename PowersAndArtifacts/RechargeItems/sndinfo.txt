@@ -1,0 +1,2 @@
+misc/StrifeKit_pkup		skitemup
+misc/EmergencyKit_pkup	ekitemup

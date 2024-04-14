@@ -1,0 +1,235 @@
+Actor RechargeSphereBase : CustomInventory
+{
+	Inventory.Amount 0
+	Inventory.MaxAmount 0
+	Inventory.InterHubAmount 0
+	+INVENTORY.FANCYPICKUPSOUND
+	Inventory.PickupSound "misc/p_pkup"
+}
+
+Actor RechargeHealthBase : CustomInventory
+{
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	-INVENTORY.ALWAYSPICKUP
+}
+
+// Powerups
+Actor RechargeHealthItem : Health
+{
+	Inventory.Amount 1
+	Inventory.MaxAmount 250
+	+Inventory.ALWAYSPICKUP
+}
+
+Actor RechargeArmorItem : BasicArmorBonus
+{
+	Armor.SavePercent 33.335
+	Armor.SaveAmount 1
+	Armor.MaxSaveAmount 250
+	+Inventory.ALWAYSPICKUP
+}
+
+Actor HealthRechargeSphere : RechargeSphereBase
+{
+	Inventory.PickupMessage "You got the Health Recharge Sphere!"
+	
+	States
+	{
+	Spawn:
+		HREC ABCDCB 6 Bright
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("HealthRegenCount", 100)
+		TNT1 A 0 A_GiveInventory("HealthRegenControlItem", 1)
+		TNT1 A 0 ACS_NamedExecuteAlways("RechargeWelfareRegenerationScript", 0, 0)
+		Stop
+	}
+}
+
+Actor ArmorRechargeSphere : RechargeSphereBase
+{
+	Inventory.PickupMessage "You got the Armor Recharge Sphere!"
+	
+	States
+	{
+	Spawn:
+		AREC ABCDCB 6 Bright
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("ArmorRegenCount", 100)
+		TNT1 A 0 A_GiveInventory("ArmorRegenControlItem", 1)
+		TNT1 A 0 ACS_NamedExecuteAlways("RechargeWelfareRegenerationScript", 0, 6)
+		Stop
+	}
+}
+
+Actor HealthAndArmorRechargeSphere : RechargeSphereBase
+{
+	Inventory.PickupMessage "You got the Health & Armor Recharge Sphere!"
+	
+	States
+	{
+	Spawn:
+		BREC ABCD 6 Bright
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("HealthRegenCount", 200)
+		TNT1 A 0 A_GiveInventory("HealthRegenControlItem", 1)
+		TNT1 A 0 ACS_NamedExecuteAlways("RechargeWelfareRegenerationScript", 0, 0)
+		TNT1 A 0 A_GiveInventory("ArmorRegenCount", 200)
+		TNT1 A 0 A_GiveInventory("ArmorRegenControlItem", 1)
+		TNT1 A 0 ACS_NamedExecuteAlways("RechargeWelfareRegenerationScript", 0, 6)
+		Stop
+	}
+}
+
+Actor RechargeMedikit : RechargeHealthBase
+{
+	Inventory.PickupMessage "You got the Recharge Medikit!"
+	Inventory.PickupSound "misc/health_pkup"
+	States
+	{
+	Spawn:
+		RMED A -1
+		Stop
+	Pickup:
+		TNT1 A 1 A_JumpIf(health >= 250, "PickupFail")
+		TNT1 A 0 A_GiveInventory("MedikitRegenCount", 25)
+		TNT1 A 0 A_GiveInventory("MedikitRegenControlItem", 1)
+		TNT1 A 0 ACS_NamedExecuteAlways("RechargeWelfareRegenerationScript", 0, 1)
+		Stop
+	PickupFail:
+		TNT1 A 0
+		Fail
+	}
+}
+
+Actor RechargeStimpack : RechargeHealthBase
+{
+	Inventory.PickupMessage "You got the Recharge Stimpack!"
+	Inventory.PickupSound "misc/health_pkup"
+	States
+	{
+	Spawn:
+		RSTM A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIf(health >= 250, "PickupFail")
+		TNT1 A 0 A_GiveInventory("StimpackRegenCount", 10)
+		TNT1 A 0 A_GiveInventory("StimpackRegenControlItem", 1)
+		TNT1 A 0 ACS_NamedExecuteAlways("RechargeWelfareRegenerationScript", 0, 2)
+		Stop
+	PickupFail:
+		TNT1 A 0
+		Fail
+	}
+}
+
+Actor RechargeMediPatch : RechargeHealthBase
+{
+	Inventory.PickupMessage "You got the Recharge MediPatch!"
+	Inventory.PickupSound "misc/StrifeKit_pkup"
+	States
+	{
+	Spawn:
+		RMPT A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIf(health >= 250, "PickupFail")
+		TNT1 A 0 A_GiveInventory("MediPatchRegenCount", 15)
+		TNT1 A 0 A_GiveInventory("MediPatchRegenControlItem", 1)
+		TNT1 A 0 ACS_NamedExecuteAlways("RechargeWelfareRegenerationScript", 0, 3)
+		Stop
+	PickupFail:
+		TNT1 A 0
+		Fail
+	}
+}
+
+Actor RechargeMediPack : RechargeHealthBase
+{
+	Inventory.PickupMessage "You got the Recharge MediPack!"
+	Inventory.PickupSound "misc/StrifeKit_pkup"
+	States
+	{
+	Spawn:
+		RMPK A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIf(health >= 250, "PickupFail")
+		TNT1 A 0 A_GiveInventory("MediPackRegenCount", 50)
+		TNT1 A 0 A_GiveInventory("MediPackRegenControlItem", 1)
+		TNT1 A 0 ACS_NamedExecuteAlways("RechargeWelfareRegenerationScript", 0, 4)
+		Stop
+	PickupFail:
+		TNT1 A 0
+		Fail
+	}
+}
+
+Actor RechargeSurgicalPack : RechargeHealthBase
+{
+	Inventory.PickupMessage "You got the Recharge Surgical Pack!"
+	Inventory.PickupSound "misc/StrifeKit_pkup"
+	States
+	{
+	Spawn:
+		RSPK A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIf(health >= 250, "PickupFail")
+		TNT1 A 0 A_GiveInventory("SurgicalPackRegenCount", 75)
+		TNT1 A 0 A_GiveInventory("SurgicalPackRegenControlItem", 1)
+		TNT1 A 0 ACS_NamedExecuteAlways("RechargeWelfareRegenerationScript", 0, 5)
+		Stop
+	PickupFail:
+		TNT1 A 0
+		Fail
+	}
+}
+
+Actor RechargeEmergencyHealthRestore : RechargeHealthBase
+{
+	Inventory.PickupMessage "You got the Recharge Emergency Health Restore!"
+	Inventory.PickupSound "misc/EmergencyKit_pkup"
+	States
+	{
+	Spawn:
+		REHR A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIfInventory("RechargeEmergencyHealthRestoreCount", 1, "PickupFail")
+		TNT1 A 0 A_GiveInventory("RechargeEmergencyHealthRestoreCount", 1)
+		TNT1 A 0 ACS_NamedExecuteAlways("RechargeEmergencyHealthRestoreScript")
+		Stop
+	PickupFail:
+		TNT1 A 0
+		Fail
+	}
+}
+
+
+/* Spheres */
+Actor HealthRegenControlItem : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+Actor HealthRegenCount : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+
+/* Medikits */
+// Basic
+Actor ArmorRegenControlItem : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+Actor ArmorRegenCount : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+Actor MedikitRegenCount : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+Actor MedikitRegenControlItem : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+Actor StimpackRegenCount : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+Actor StimpackRegenControlItem : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+
+// Advanced
+Actor MediPatchRegenCount : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+Actor MediPatchRegenControlItem : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+Actor MediPackRegenCount : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+Actor MediPackRegenControlItem : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+Actor SurgicalPackRegenCount : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+Actor SurgicalPackRegenControlItem : Inventory { Inventory.MaxAmount 0x7FFFFFFF }
+
+// Only 1 "RechargeEmergencyHealthRestore" should be allowed per player or use!
+Actor RechargeEmergencyHealthRestoreCount : Inventory { Inventory.MaxAmount 1 }

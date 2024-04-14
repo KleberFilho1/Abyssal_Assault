@@ -1,0 +1,19 @@
+Actor AmmoSphere : PowerupGiver 21468
+{
+	Game Doom
+	+COUNTITEM
+	+INVENTORY.AUTOACTIVATE
+	+INVENTORY.ALWAYSPICKUP
+	+INVENTORY.FANCYPICKUPSOUND
+	Inventory.PickupMessage "Infinite Ammo!"
+	Inventory.PickupSound "misc/p_pkup"
+	Powerup.Duration -30
+	Powerup.Type "PowerInfiniteAmmo"
+	Powerup.Color "255 0 0" 0.4
+	States
+	{
+	Spawn:
+		AMSP ABCD 6 bright
+		loop
+	}
+}

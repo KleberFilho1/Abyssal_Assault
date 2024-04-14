@@ -15,11 +15,12 @@ func launch_projectile():
 
 func _process(delta):
 	#IF que verificar que o botão "shoot" está sendo pressionado e faz a animação acontece
-	if Input.is_action_pressed("shoot") and can_shoot:
+	if Input.is_action_pressed("shoot") and can_shoot and PlayerStats.ammo_max_rocket > 0:
 		gunsprite.play("shoot")
 		launch_projectile()
 		can_shoot = false
 		yield(gunsprite, 'animation_finished')
 		can_shoot = true
 		gunsprite.play("idle")
+		PlayerStats.ammo_max_rocket -= 1
 
