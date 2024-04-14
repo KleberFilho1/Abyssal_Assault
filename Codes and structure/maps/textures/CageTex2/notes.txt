@@ -1,0 +1,7 @@
+1. Texture C2MARB90 is an alternate and enhanced version of texture C2MARB01, credited to Fox666
+   and NeuralStunner in addition to Cage for the original.
+2. There are two C2MARB90 textures, one in between the TX_ markers, and one outside of the markers.
+   The difference between the two is that the one in between the markers is paletted while the one
+   outside the of markers is in truecolor. The outside one will not be loaded by default in the
+   editor. So if one wants to use it, they either need to switch it with the one in between the
+   markers, or move it in and give it a unique name so both are available for use.

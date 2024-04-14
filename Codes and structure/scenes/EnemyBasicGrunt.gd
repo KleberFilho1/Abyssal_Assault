@@ -84,10 +84,13 @@ func death():
 		$AnimatedSprite3D.play("die")
 
 func shoot():
+	#Fazendo a animção de atirar
 	if searching and not dead and not shooting:
 		$AnimatedSprite3D.play('shoot')
 		shooting = true
 		yield($AnimatedSprite3D, 'frame_changed')
+		
+		#Dando dano no Player
 		if ray.is_colliding():
 			if ray.get_collider().is_in_group('Player'):
 				PlayerStats.change_health(-player_damage)
@@ -97,7 +100,7 @@ func shoot():
 func _on_Timer_timeout():
 	find_path(player.global_transform.origin)
 
-
+#Aurora que serve como "ouvidor" para o inimigo
 func _on_Aural_body_entered(body):
 	if body.is_in_group('Player'):
 		print('I hear you')

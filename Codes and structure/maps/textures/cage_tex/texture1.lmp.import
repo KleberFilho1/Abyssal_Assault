@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.palette"
+type="Resource"
+path="res://.import/texture1.lmp-ff966cbe825b146c23e06ad9886e0db8.tres"
+
+[deps]
+
+source_file="res://maps/textures/cage_tex/texture1.lmp"
+dest_files=[ "res://.import/texture1.lmp-ff966cbe825b146c23e06ad9886e0db8.tres" ]
+
+[params]
+
