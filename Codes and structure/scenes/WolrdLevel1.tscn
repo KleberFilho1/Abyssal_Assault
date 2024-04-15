@@ -32,4 +32,36 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9914, 0, -3.93421 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9914, 0, 2.01161 )
 
 [node name="HealthPickup" parent="." instance=ExtResource( 5 )]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 5.17039, 0, -7.20081 )
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 50.3296, 0, -1.38342 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.711489, 2.71424, -1.65954 )
+light_energy = 2.0
+light_indirect_energy = 1.025
+light_specular = 0.548
+shadow_enabled = true
+omni_range = 10.4746
+
+[node name="OmniLight2" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7685, 2.71424, -1.65954 )
+light_energy = 2.0
+light_indirect_energy = 1.025
+light_specular = 0.548
+shadow_enabled = true
+omni_range = 10.4746
+
+[node name="OmniLight4" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7685, 2.71424, 24.6167 )
+light_energy = 2.0
+light_indirect_energy = 1.025
+light_specular = 0.548
+shadow_enabled = true
+omni_range = 10.4746
+
+[node name="OmniLight3" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6366, 2.71424, -1.65954 )
+light_energy = 2.0
+light_indirect_energy = 1.025
+light_specular = 0.548
+shadow_enabled = true
+omni_range = 10.4746

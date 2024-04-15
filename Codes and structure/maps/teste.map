@@ -1,0 +1,61 @@
+// Game: Qodot
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures/CageTex2;textures/CageTex2/TEXTURES;textures/CageTex2/graphics;textures/cage_tex;textures/cage_tex/FLATS;textures/cage_tex/decompiled;textures/cage_tex/patches"
+// brush 0
+{
+( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) __TB_empty 0 0 0 1 1
+( -64 -240 -16 ) ( -64 -240 -15 ) ( -63 -240 -16 ) __TB_empty 0 0 0 1 1
+( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) __TB_empty 0 0 0 1 1
+( 64 64 0 ) ( 64 65 0 ) ( 65 64 0 ) cage_tex/patches/cgrock00 0 0 0 0.5 0.5
+( 64 64 16 ) ( 65 64 16 ) ( 64 64 17 ) __TB_empty 0 0 0 1 1
+( 224 64 16 ) ( 224 64 17 ) ( 224 65 16 ) __TB_empty 0 0 0 1 1
+}
+// brush 1
+{
+( 64 -96 0 ) ( 64 -95 0 ) ( 64 -96 1 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 64 -96 0 ) ( 64 -96 1 ) ( 65 -96 0 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 64 -96 0 ) ( 65 -96 0 ) ( 64 -95 0 ) __TB_empty 0 0 0 1 1
+( 80 -80 16 ) ( 80 -79 16 ) ( 81 -80 16 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 80 -80 8 ) ( 81 -80 8 ) ( 80 -80 9 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 80 -80 8 ) ( 80 -80 9 ) ( 80 -79 8 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+}
+// brush 2
+{
+( 80 -88 0 ) ( 80 -87 0 ) ( 80 -88 1 ) cage_tex/FLATS/cgflat00 32 0 0 0.25 0.25
+( 80 -88 0 ) ( 80 -88 1 ) ( 81 -88 0 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 80 -88 0 ) ( 81 -88 0 ) ( 80 -87 0 ) __TB_empty 0 0 0 1 1
+( 96 -72 16 ) ( 96 -71 16 ) ( 97 -72 16 ) cage_tex/FLATS/cgflat00 0 -32 0 0.25 0.25
+( 96 -72 8 ) ( 97 -72 8 ) ( 96 -72 9 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 96 -72 8 ) ( 96 -72 9 ) ( 96 -71 8 ) cage_tex/FLATS/cgflat00 32 0 0 0.25 0.25
+}
+// brush 3
+{
+( 80 -104 0 ) ( 80 -103 0 ) ( 80 -104 1 ) cage_tex/FLATS/cgflat00 32 0 0 0.25 0.25
+( 80 -104 0 ) ( 80 -104 1 ) ( 81 -104 0 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 80 -104 0 ) ( 81 -104 0 ) ( 80 -103 0 ) __TB_empty 0 0 0 1 1
+( 96 -88 16 ) ( 96 -87 16 ) ( 97 -88 16 ) cage_tex/FLATS/cgflat00 0 -32 0 0.25 0.25
+( 96 -88 8 ) ( 97 -88 8 ) ( 96 -88 9 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 96 -88 8 ) ( 96 -88 9 ) ( 96 -87 8 ) cage_tex/FLATS/cgflat00 32 0 0 0.25 0.25
+}
+// brush 4
+{
+( 96 -96 0 ) ( 96 -95 0 ) ( 96 -96 1 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 96 -96 0 ) ( 96 -96 1 ) ( 97 -96 0 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 96 -96 0 ) ( 97 -96 0 ) ( 96 -95 0 ) __TB_empty 0 0 0 1 1
+( 112 -80 16 ) ( 112 -79 16 ) ( 113 -80 16 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 112 -80 8 ) ( 113 -80 8 ) ( 112 -80 9 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 112 -80 8 ) ( 112 -80 9 ) ( 112 -79 8 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+}
+// brush 5
+{
+( 80 -96 16 ) ( 80 -95 16 ) ( 80 -96 17 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 80 -96 16 ) ( 80 -96 17 ) ( 81 -96 16 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 80 -96 16 ) ( 81 -96 16 ) ( 80 -95 16 ) __TB_empty 0 0 0 1 1
+( 96 -80 32 ) ( 96 -79 32 ) ( 97 -80 32 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 96 -80 24 ) ( 97 -80 24 ) ( 96 -80 25 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+( 96 -80 24 ) ( 96 -80 25 ) ( 96 -79 24 ) cage_tex/FLATS/cgflat00 0 0 0 0.25 0.25
+}
+}
