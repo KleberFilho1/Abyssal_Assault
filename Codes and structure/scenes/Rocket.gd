@@ -10,12 +10,16 @@ func deal_damage():
 	for body in enemies:
 		if body.is_in_group("Enemy"):
 			body.take_damage(rocket_damage)
+		if body.is_in_group('Player'):
+			PlayerStats.take_damage(rocket_damage)
 	enemies = $SplashDamage.get_overlapping_bodies()
 	#Verificando e provocando dano na explosão do foguete
 	for body in enemies:
 		if body.is_in_group("Enemy"):
 			body.take_damage(rocket_damage)
-
+		if body.is_in_group('Player'):
+			PlayerStats.take_damage(rocket_damage)
+		
 func _process(delta):
 	#Vetor velocidade ddo foguete
 	translate(Vector3.FORWARD * rocket_speed * delta)	
