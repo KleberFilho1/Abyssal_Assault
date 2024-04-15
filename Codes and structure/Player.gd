@@ -16,13 +16,14 @@ onready var rocketlaucher = preload('res://scenes/RocketLaucher.tscn')
 #Menu de armas
 var current_gun = 0
 #Colocar nova arma no vetor "carried_guns"
-onready var carried_guns = [pistol, shotgun, uzi, rocketlaucher]
+onready var carried_guns = [pistol, shotgun, uzi]
 
 #funções
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	change_gun(0)
-	
+
+#Movimentação
 func get_input():
 	#Entradas de movimentação
 	var input_dir = Vector3()
