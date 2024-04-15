@@ -58,7 +58,7 @@ func look_at_player():
 	if ray.is_colliding():
 		if ray.get_collider().is_in_group('Player'):
 			searching = true
-			print('I see you')
+			#print('I see you')
 		else:
 			searching = false
 			var check_near = $Aural.get_overlapping_bodies()
@@ -103,7 +103,7 @@ func _on_Timer_timeout():
 #Aurora que serve como "ouvidor" para o inimigo
 func _on_Aural_body_entered(body):
 	if body.is_in_group('Player'):
-		print('I hear you')
+		#print('I hear you')
 		searching = true
 		
 

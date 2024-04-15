@@ -19,7 +19,7 @@ func deal_damage():
 			body.take_damage(rocket_damage)
 		if body.is_in_group('Player'):
 			PlayerStats.take_damage(rocket_damage)
-		
+
 func _process(delta):
 	#Vetor velocidade ddo foguete
 	translate(Vector3.FORWARD * rocket_speed * delta)	

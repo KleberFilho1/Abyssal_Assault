@@ -83,4 +83,7 @@ func _process(delta):
 		if $InteractCast.is_colliding():
 			if $InteractCast.get_collider().is_in_group("Door"):
 				$InteractCast.get_collider().get_node('AnimationPlayer').play('OpenDoor')
-				print('Open the door')
+				#print('Open the door')
+
+func screen_death():
+	pass
