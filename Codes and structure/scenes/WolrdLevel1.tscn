@@ -68,4 +68,4 @@ shadow_enabled = true
 omni_range = 10.4746
 
 [node name="HealthPickup2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 4.47226, 0, 2.00661 )
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 5.48957, 0, 2.2874 )
