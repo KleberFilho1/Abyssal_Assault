@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Pistol.tscn" type="PackedScene" id=2]
@@ -7,6 +7,51 @@
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.26543
 height = 2.01613
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "trasition"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "trasition2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
 
 [node name="Player" type="KinematicBody" groups=["Player"]]
 script = ExtResource( 1 )
@@ -28,15 +73,15 @@ transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0 )
 transform = Transform( -1, 0, -8.06552e-07, 0, 1.22171, 0, 8.74228e-08, 0, -9.22588, 0, -7.15256e-07, 0 )
 fov = 120.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Crosshair" type="CanvasLayer" parent="."]
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+[node name="CenterContainer" type="CenterContainer" parent="Crosshair"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/CenterContainer"]
+[node name="Sprite" type="Sprite" parent="Crosshair/CenterContainer"]
 scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 3 )
 
@@ -44,3 +89,20 @@ texture = ExtResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0 )
 enabled = true
 cast_to = Vector3( 0, 0, 4 )
+
+[node name="Trasition" type="CanvasLayer" parent="."]
+
+[node name="Animation" type="AnimationPlayer" parent="Trasition"]
+anims/RESET = SubResource( 2 )
+anims/trasition = SubResource( 3 )
+anims/trasition2 = SubResource( 4 )
+
+[node name="Background" type="ColorRect" parent="Trasition"]
+margin_right = 40.0
+margin_bottom = 40.0
+color = Color( 0, 0, 0, 0 )
+
+[node name="Reset" type="Timer" parent="Trasition"]
+autostart = true
+
+[connection signal="timeout" from="Trasition/Reset" to="." method="_on_Reset_timeout"]

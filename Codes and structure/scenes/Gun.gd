@@ -9,7 +9,7 @@ onready var flash = preload("res://scenes/MuzzleFlash.tscn")
 #Selecionado partícula de sangue
 onready var blood = preload("res://scenes/Blood.tscn")
 
-var can_shoot = true
+var cannot_shoot = true
 export var rapid_fire = false
 
 #Valor do dano da arma
@@ -41,20 +41,20 @@ func make_flash():
 
 #Função qeu faz atirar
 func _process(delta):
-	if Input.is_action_pressed("shoot") and can_shoot and PlayerStats.ammo_pistol > 0:
+	if Input.is_action_pressed("shoot") and cannot_shoot and PlayerStats.ammo_pistol > 0:
 		gun_sprite.play("shoot")
 		make_flash()
 		check_hit()
 		PlayerStats.change_pistol_ammo(-1)
-		can_shoot = false
+		cannot_shoot = false
 		
 		#Função de redimento
-		yield (gun_sprite, 'animation_finished')
+		yield(gun_sprite, 'animation_finished')
 		
-		can_shoot = true 
+		cannot_shoot = true 
 		gun_sprite.play("idle")
 
 
 func _on_Timer_timeout():
-	can_shoot = true #Replace with fuction body.
+	cannot_shoot = true #Replace with fuction body.
 	

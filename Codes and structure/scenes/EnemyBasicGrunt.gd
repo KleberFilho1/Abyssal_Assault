@@ -93,7 +93,7 @@ func shoot():
 		#Dando dano no Player
 		if ray.is_colliding():
 			if ray.get_collider().is_in_group('Player'):
-				PlayerStats.change_health(-player_damage)
+				PlayerStats.take_damage(player_damage)
 		yield($AnimatedSprite3D, "animation_finished")
 		shooting = false
 

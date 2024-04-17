@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://scenes/EnemyBasicGrunt.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/HealthPickup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/RocketLaucherPickup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/PistolPickup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/ShotgunPickup.tscn" type="PackedScene" id=8]
 
 [node name="World" type="Spatial"]
 
@@ -23,8 +25,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4285, 0.318288, 23.2151 )
 [node name="EnemyBasicGrunt2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.512, 0, 24.8628 )
 
+[node name="EnemyBasicGrunt9" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.512, 0, 17.0705 )
+
 [node name="EnemyBasicGrunt3" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6363, 0, 24.8628 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6363, 0, 22.0441 )
+
+[node name="EnemyBasicGrunt10" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26361, -3.04238, 20.4318 )
+
+[node name="EnemyBasicGrunt11" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13143, -3.04238, 24.2729 )
+
+[node name="EnemyBasicGrunt12" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41975, -3.04238, 27.1855 )
 
 [node name="EnemyBasicGrunt4" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9914, 0, -3.93421 )
@@ -32,8 +46,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9914, 0, -3.93421 )
 [node name="EnemyBasicGrunt5" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9914, 0, 2.01161 )
 
+[node name="EnemyBasicGrunt6" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4045, 0, -1.55246 )
+
+[node name="EnemyBasicGrunt7" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.3945, 0, -4.48934 )
+
+[node name="EnemyBasicGrunt8" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.091, 0, 1.43084 )
+
 [node name="HealthPickup" parent="." instance=ExtResource( 5 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 50.3296, 0, -1.38342 )
+
+[node name="RocketPickup" parent="." instance=ExtResource( 6 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 3.39171, -3.05381, 39.3096 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.711489, 2.71424, -1.65954 )
@@ -44,7 +70,63 @@ shadow_enabled = true
 omni_range = 10.4746
 
 [node name="OmniLight2" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7685, 2.71424, -1.65954 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.569, 2.71424, -2.82335 )
+light_energy = 2.0
+light_indirect_energy = 1.025
+light_specular = 0.548
+shadow_enabled = true
+omni_range = 10.4746
+
+[node name="OmniLight5" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1985, 2.71424, 2.32844 )
+light_energy = 2.0
+light_indirect_energy = 1.025
+light_specular = 0.548
+shadow_enabled = true
+omni_range = 10.4746
+
+[node name="OmniLight6" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57597, -0.716937, 18.8058 )
+light_energy = 2.0
+light_indirect_energy = 1.025
+light_specular = 0.548
+shadow_enabled = true
+omni_range = 10.4746
+
+[node name="OmniLight7" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57597, -0.633498, 27.2936 )
+light_energy = 2.0
+light_indirect_energy = 1.025
+light_specular = 0.548
+shadow_enabled = true
+omni_range = 10.4746
+
+[node name="OmniLight8" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63731, -1.92991, 39.4727 )
+light_energy = 2.0
+light_indirect_energy = 1.025
+light_specular = 0.548
+shadow_enabled = true
+omni_range = 10.4746
+
+[node name="OmniLight9" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21215, -0.988064, 26.879 )
+light_energy = 2.0
+light_indirect_energy = 1.025
+light_specular = 0.548
+shadow_enabled = true
+omni_range = 10.4746
+
+[node name="OmniLight10" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21215, -1.05802, 18.4422 )
+light_energy = 2.0
+light_indirect_energy = 1.025
+light_specular = 0.548
+shadow_enabled = true
+omni_range = 10.4746
+
+[node name="OmniLight11" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3329, -0.898118, 24.2978 )
 light_energy = 2.0
 light_indirect_energy = 1.025
 light_specular = 0.548
@@ -60,12 +142,18 @@ shadow_enabled = true
 omni_range = 10.4746
 
 [node name="OmniLight3" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.6366, 2.71424, -1.65954 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.0243, 3.52831, -1.65954 )
 light_energy = 2.0
 light_indirect_energy = 1.025
 light_specular = 0.548
 shadow_enabled = true
 omni_range = 10.4746
 
-[node name="HealthPickup2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 5.48957, 0, 2.2874 )
+[node name="PistolPickup" parent="." instance=ExtResource( 7 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 49.4033, 0.416771, 4.28799 )
+
+[node name="PistolPickup2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 28.7331, 0.416771, 17.1304 )
+
+[node name="ShotgunPickup" parent="." instance=ExtResource( 8 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 44.4322, 0.473111, 4.29924 )

@@ -1,11 +1,11 @@
 extends KinematicBody
 
-
 #Váriaveis de configurações de escopo global
 var velocity = Vector3()
 var gravity = -30
 var max_speed = 8
 var mouse_sensitivility = 0.002
+var life = true
 
 #variáveis das armas
 #Armas
@@ -85,6 +85,17 @@ func _process(delta):
 			if $InteractCast.get_collider().is_in_group("Door"):
 				$InteractCast.get_collider().get_node('AnimationPlayer').play('OpenDoor')
 				#print('Open the door')
-
+	
+#Função que faz a tela de morte aparecer
 func screen_death():
 	pass
+
+#Ganbirra
+func _on_Reset_timeout() -> void:
+	if PlayerStats.health == 0:
+		$Trasition/Animation.play("trasition")
+		get_tree().reload_current_scene()
+		PlayerStats.reset()
+		$Trasition/Animation.play("trasition2")
+	else:
+		pass
