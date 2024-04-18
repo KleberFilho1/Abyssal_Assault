@@ -105,4 +105,8 @@ color = Color( 0, 0, 0, 0 )
 [node name="Reset" type="Timer" parent="Trasition"]
 autostart = true
 
+[node name="ChangeLevel" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="timeout" from="Trasition/Reset" to="." method="_on_Reset_timeout"]
+[connection signal="timeout" from="ChangeLevel" to="." method="_on_ChangeLevel_timeout"]

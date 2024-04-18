@@ -85,7 +85,12 @@ func _process(delta):
 			if $InteractCast.get_collider().is_in_group("Door"):
 				$InteractCast.get_collider().get_node('AnimationPlayer').play('OpenDoor')
 				#print('Open the door')
-	
+			elif $InteractCast.get_collider().is_in_group('Button'):
+				$InteractCast.get_collider().get_node('AnimationPlayer').play('AtivandoButton')
+				print('Você apertou no botão')
+				$ChangeLevel.start()
+				pass
+				
 #Função que faz a tela de morte aparecer
 func screen_death():
 	pass
@@ -99,3 +104,8 @@ func _on_Reset_timeout() -> void:
 		$Trasition/Animation.play("trasition2")
 	else:
 		pass
+
+func _on_ChangeLevel_timeout():
+	get_tree().change_scene("res://scenes/WorldTest.tscn")
+	PlayerStats.reset()
+	pass

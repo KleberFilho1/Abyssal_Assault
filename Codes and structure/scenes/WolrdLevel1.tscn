@@ -93,6 +93,14 @@ light_specular = 0.548
 shadow_enabled = true
 omni_range = 10.4746
 
+[node name="OmniLight12" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21651, -0.716937, 13.9145 )
+light_energy = 2.0
+light_indirect_energy = 1.025
+light_specular = 0.548
+shadow_enabled = true
+omni_range = 10.4746
+
 [node name="OmniLight7" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57597, -0.633498, 27.2936 )
 light_energy = 2.0

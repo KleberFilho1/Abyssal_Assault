@@ -183,6 +183,24 @@
 ( 248 72 0 ) ( 249 72 0 ) ( 248 72 1 ) cage_tex/patches/cgindu23 0 -60 0 1 0.8
 ( 248 72 0 ) ( 248 72 1 ) ( 248 73 0 ) cage_tex/patches/cgindu23 0 -60 0 1 0.8
 }
+// brush 20
+{
+( 144 20 -48 ) ( 144 21 -48 ) ( 144 20 -47 ) cage_tex/patches/cgmetl06 6 -8 0 1 1
+( 144 16 -48 ) ( 144 16 -47 ) ( 145 16 -48 ) cage_tex/patches/cgsilv01 0 -6 0 1 1
+( 144 20 -40 ) ( 145 20 -40 ) ( 144 21 -40 ) cage_tex/patches/cgsilv01 0 -6 0 1 1
+( 146 28 -32 ) ( 146 29 -32 ) ( 147 28 -32 ) cage_tex/patches/cgsilv01 0 -6 0 1 1
+( 146 24 -38 ) ( 147 24 -38 ) ( 146 24 -37 ) cage_tex/patches/cgsilv01 0 -6 0 1 1
+( 146 28 -38 ) ( 146 28 -37 ) ( 146 29 -38 ) cage_tex/patches/cgswc02b 0 0 0 0.25 0.25
+}
+// brush 21
+{
+( 144 36 -48 ) ( 144 37 -48 ) ( 144 36 -47 ) cage_tex/patches/cgmetl06 -10 -8 0 1 1
+( 144 32 -48 ) ( 144 32 -47 ) ( 145 32 -48 ) cage_tex/patches/cgsilv01 0 -6 0 1 1
+( 144 36 -40 ) ( 145 36 -40 ) ( 144 37 -40 ) cage_tex/patches/cgsilv01 0 10 0 1 1
+( 146 44 -32 ) ( 146 45 -32 ) ( 147 44 -32 ) cage_tex/patches/cgsilv01 0 10 0 1 1
+( 146 40 -38 ) ( 147 40 -38 ) ( 146 40 -37 ) cage_tex/patches/cgsilv01 0 -6 0 1 1
+( 146 44 -38 ) ( 146 44 -37 ) ( 146 45 -38 ) cage_tex/patches/cgswc02a 0 0 0 0.25 0.25
+}
 }
 // entity 1
 {
@@ -1045,37 +1063,5 @@
 ( 192 48 -16 ) ( 192 49 -16 ) ( 193 48 -16 ) cage_tex/patches/cgsilv01 0 0 0 1 1
 ( 192 48 -48 ) ( 193 48 -48 ) ( 192 48 -47 ) __TB_empty 0 0 0 1 1
 ( 192 48 -48 ) ( 192 48 -47 ) ( 192 49 -48 ) cage_tex/patches/cgdoor06 32 80 0 -0.5 0.31
-}
-}
-// entity 11
-{
-"classname" "func_group"
-"_tb_type" "_tb_group"
-"_tb_name" "ButtonAtiv"
-"_tb_id" "12"
-// brush 0
-{
-( 144 20 -48 ) ( 144 21 -48 ) ( 144 20 -47 ) cage_tex/patches/cgmetl06 6 -8 0 1 1
-( 144 16 -48 ) ( 144 16 -47 ) ( 145 16 -48 ) cage_tex/patches/cgsilv01 0 -6 0 1 1
-( 144 20 -40 ) ( 145 20 -40 ) ( 144 21 -40 ) cage_tex/patches/cgsilv01 0 -6 0 1 1
-( 146 28 -32 ) ( 146 29 -32 ) ( 147 28 -32 ) cage_tex/patches/cgsilv01 0 -6 0 1 1
-( 146 24 -38 ) ( 147 24 -38 ) ( 146 24 -37 ) cage_tex/patches/cgsilv01 0 -6 0 1 1
-( 146 28 -38 ) ( 146 28 -37 ) ( 146 29 -38 ) cage_tex/patches/cgswc02b 0 0 0 0.25 0.25
-}
-}
-// entity 12
-{
-"classname" "func_group"
-"_tb_type" "_tb_group"
-"_tb_name" "ButtonDesatv"
-"_tb_id" "13"
-// brush 0
-{
-( 144 36 -48 ) ( 144 37 -48 ) ( 144 36 -47 ) cage_tex/patches/cgmetl06 -10 -8 0 1 1
-( 144 32 -48 ) ( 144 32 -47 ) ( 145 32 -48 ) cage_tex/patches/cgsilv01 0 -6 0 1 1
-( 144 36 -40 ) ( 145 36 -40 ) ( 144 37 -40 ) cage_tex/patches/cgsilv01 0 10 0 1 1
-( 146 44 -32 ) ( 146 45 -32 ) ( 147 44 -32 ) cage_tex/patches/cgsilv01 0 10 0 1 1
-( 146 40 -38 ) ( 147 40 -38 ) ( 146 40 -37 ) cage_tex/patches/cgsilv01 0 -6 0 1 1
-( 146 44 -38 ) ( 146 44 -37 ) ( 146 45 -38 ) cage_tex/patches/cgswc02a 0 0 0 0.25 0.25
 }
 }
