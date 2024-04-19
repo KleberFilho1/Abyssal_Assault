@@ -106,6 +106,10 @@ func _on_Reset_timeout() -> void:
 		pass
 
 func _on_ChangeLevel_timeout():
-	get_tree().change_scene("res://scenes/WorldTest.tscn")
+	var level = 2
+	var cena_do_level = "res://scenes/WorldLevel{str}.tscn"
+	var mudando_string = cena_do_level.format({"str": level})
+	get_tree().change_scene(mudando_string)
 	PlayerStats.reset()
+	level += 1
 	pass
